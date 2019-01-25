@@ -30,35 +30,33 @@ public class Project_DAO implements DAO_interface {
         }
     }
 
-    // 행 삽입
+    // 행 삽입 : 완성
     @Override
-    public int insert(String table, String[] columns, String[] values) {
+    public int insert(String table, ArrayList<String> columns, ArrayList<String> values) {
         int result = -1;
         connect();
-        String sql = "INSERT INTO "+table;
-        for (int i = 0; i < columns.length; i++) {
-            if (i == 0) {
-                sql += "("+columns[i]+", ";
-            } else if (i == columns.length - 1) {
-                sql += columns[i]+") VALUES ";
+        String sql = "INSERT INTO "+table + " (";
+        for (int i = 0; i < columns.size(); i++) {
+            if (i == columns.size() - 1) {
+                sql += columns.get(i)+") ";
             } else {
-                sql += columns[i]+", ";
+                sql += columns.get(i)+", ";
             }
         }
-        for (int i = 0; i < values.length; i++) {
-            if (i == 0) {
-                sql += "("+values[i]+", ";
-            } else if (i == values.length - 1) {
-                sql += values[i]+")";
+        sql += "VALUES (";
+        for (int i = 0; i < values.size(); i++) {
+            if (i == values.size() - 1) {
+                sql += "?)";
             } else {
-                sql += values[i]+", ";
+                sql += "?, ";
             }
         }
         System.out.println(sql);
         try {
             psmt = conn.prepareStatement(sql);
-            psmt.setString(1, table);
-            System.out.println();
+            for (int i = 0; i < values.size(); i++) {
+                psmt.setString(i + 1, values.get(i));
+            }
             result = psmt.executeUpdate();
 
         } catch (SQLException e) {
@@ -78,7 +76,6 @@ public class Project_DAO implements DAO_interface {
 
         try {
             psmt = conn.prepareStatement(sql);
-
             selectedChanger(result);
 
         } catch (SQLException e) {
@@ -88,27 +85,29 @@ public class Project_DAO implements DAO_interface {
         return result;
     }
 
-    // 테이블 내용 선택 컬럼 조회 : 완성
+    // 테이블 내용 선택 컬럼 조회 : ArrayList<ArrayList<String>> result에 colums의 인자가 담기는이유?
+    // -> prepareStatement 의 setString을 하면 전달받은 값에 ' '를 씌워서 sql문에 전달한다...
     @Override
-    public ArrayList<ArrayList<String>> select(String table, String[] columns, String limit) {
+    public ArrayList<ArrayList<String>> select(String table, ArrayList<String> columns, String limit) {
         connect();
         String sql = "SELECT ";
         ArrayList<ArrayList<String>> result = new ArrayList<>();
-        //ResultSet rs = null;
+        //ResultSet rs;
 
-        for (int i = 0; i < columns.length; i++) {
-            if (i == 0) {
-                sql += columns[i]+", ";
-            } else if (i == columns.length - 1) {
-                sql += columns[i]+" FROM "+table+" WHERE "+limit;
+        for (int i = 0; i < columns.size(); i++) {
+
+            if (i == columns.size() - 1) {
+                sql += columns.get(i)+" FROM "+table+" WHERE "+limit;
+            } else if (i == 0) {
+                sql += columns.get(i)+", ";
             } else {
-                sql += columns[i]+", ";
+                sql += columns.get(i)+", ";
             }
         }
+
         System.out.println(sql);
         try {
             psmt = conn.prepareStatement(sql);
-            //psmt.setString(1, limit);
             selectedChanger(result);
 
         } catch (SQLException e) {
@@ -118,18 +117,16 @@ public class Project_DAO implements DAO_interface {
         return result;
     }
 
+    // 행 업데이트 :
     @Override
     public int update(String table, String column, String value, String limit) {
         connect();
-        String sql = "UPDATE ? SET ? = ? WHERE ?";
+        String sql = "UPDATE "+table+" SET "+column+" = ? WHERE "+limit;
         int result = -1;
-
+        System.out.println(sql);
         try {
             psmt = conn.prepareStatement(sql);
-            psmt.setString(1, table);
-            psmt.setString(2, column);
-            psmt.setString(3, value);
-            psmt.setString(4, limit);
+            psmt.setString(1, value);
             result = psmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
