@@ -6,6 +6,11 @@ import java.util.ArrayList;
 public class Project_DAO implements DAO_interface {
     Connection conn = null;
     PreparedStatement psmt = null;
+    Controller controller;
+
+    public Project_DAO(Controller controller) {
+        this.controller = controller;
+    }
 
     // 데이터베이스 연결 : 완성
     @Override
@@ -121,13 +126,18 @@ public class Project_DAO implements DAO_interface {
     @Override
     public int update(String table, String column, String value, String limit) {
         connect();
+
         String sql = "UPDATE "+table+" SET "+column+" = ? WHERE "+limit;
         int result = -1;
         System.out.println(sql);
         try {
             psmt = conn.prepareStatement(sql);
-            psmt.setString(1, value);
-            psmt.setInt(2,111);
+            if (controller.isNumber(value)) {
+                psmt.setInt(1, Integer.parseInt(value));
+            } else {
+                psmt.setString(1, value);
+            }
+
             result = psmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

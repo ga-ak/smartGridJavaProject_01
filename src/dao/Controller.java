@@ -15,4 +15,16 @@ public class Controller {
             System.out.println();
         }
     }
+
+    public boolean isNumber(String input) {
+
+        try {
+            Double.parseDouble(input);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+
+
+    }
 }
