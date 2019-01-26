@@ -127,6 +127,7 @@ public class Project_DAO implements DAO_interface {
         try {
             psmt = conn.prepareStatement(sql);
             psmt.setString(1, value);
+            psmt.setInt(2,111);
             result = psmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -138,13 +139,11 @@ public class Project_DAO implements DAO_interface {
     @Override
     public int delete(String table, String limit) {
         connect();
-        String sql = "DELETE FROM ? WHERE ?";
+        String sql = "DELETE FROM "+table+" WHERE "+limit;
         int result = -1;
 
         try {
             psmt = conn.prepareStatement(sql);
-            psmt.setString(1, table);
-            psmt.setString(2, limit);
             result = psmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
