@@ -30,9 +30,6 @@ public class DAO_practice_main {
         System.out.print("변경할 자격증 이름 입력 >> ");
         Scanner sc = new Scanner(System.in);
         String tempLimit = sc.next();
-        if (!controller.isNumber(tempLimit)) {
-            tempLimit = "\'" + tempLimit + "\'";
-        }
         String limit = "CERTIFICATE_NAME = " + tempLimit;
 
 

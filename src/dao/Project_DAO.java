@@ -126,7 +126,15 @@ public class Project_DAO implements DAO_interface {
     @Override
     public int update(String table, String column, String value, String limit) {
         connect();
+        int datum = limit.indexOf("=") + 1;
 
+        String preDatum = limit.substring(0, datum);
+        String postDatum = limit.substring(datum, limit.length()).trim();
+
+        if (!controller.isNumber(postDatum)) {
+            postDatum = "\'" + postDatum + "\'";
+        }
+        limit = preDatum + postDatum;
         String sql = "UPDATE "+table+" SET "+column+" = ? WHERE "+limit;
         int result = -1;
         System.out.println(sql);
