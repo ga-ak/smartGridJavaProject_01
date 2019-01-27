@@ -9,6 +9,8 @@ public interface DAO_interface {
 
     int insert(String table, ArrayList<String> columns, ArrayList<String> values);
 
+    int insertBatch(String table, ArrayList<String> columns, ArrayList<ArrayList<String>> valueArrays);
+
     ArrayList<ArrayList<String>> select(String table);
 
     ArrayList<ArrayList<String>> select(String table, ArrayList<String> columns, String limit);

@@ -56,9 +56,11 @@ public class Project_DAO implements DAO_interface {
                 sql += "?, ";
             }
         }
-        System.out.println(sql);
         try {
             psmt = conn.prepareStatement(sql);
+            System.out.println(sql);
+
+
             for (int i = 0; i < values.size(); i++) {
                 psmt.setString(i + 1, values.get(i));
             }
@@ -68,6 +70,63 @@ public class Project_DAO implements DAO_interface {
             e.printStackTrace();
         }
         close();
+        return result;
+    }
+
+    @Override
+    public int insertBatch(String table, ArrayList<String> columns, ArrayList<ArrayList<String>> valueArrays) {
+        System.out.println("insertBatch 시작...");
+        int result = -1;
+        connect();
+        ArrayList<String> values = valueArrays.get(0);
+        String sql = "INSERT INTO "+table + " (";
+
+        for (int i = 0; i < columns.size(); i++) {
+            if (i == columns.size() - 1) {
+                sql += columns.get(i)+") ";
+            } else {
+                sql += columns.get(i)+", ";
+            }
+        }
+        sql += "VALUES (";
+        for (int i = 0; i < values.size(); i++) {
+            if (i == values.size() - 1) {
+                sql += "?)";
+            } else {
+                sql += "?, ";
+            }
+        }
+        try {
+            psmt = conn.prepareStatement(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        for (int k = 0; k < valueArrays.size(); k++) {
+            values = valueArrays.get(k);
+
+            try {
+                //psmt = conn.prepareStatement(sql);
+                for (int i = 0; i < values.size(); i++) {
+                    psmt.setString(i + 1, values.get(i));
+                }
+                psmt.addBatch();
+                psmt.clearParameters();
+                System.out.println((k+1)+" 번째 sql문 배치에 저장 완료...");
+                //System.out.println((k+1)+" "+sql);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            psmt.executeBatch();
+            conn.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        close();
+        System.out.println("insertBatch 종료...");
         return result;
     }
 

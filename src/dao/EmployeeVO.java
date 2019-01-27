@@ -25,6 +25,46 @@ public class EmployeeVO {
         this.password = password;
     }
 
+    public String getEmployee_id() {
+        return Integer.toString(employee_id);
+    }
+
+    public String getDepartment_id() {
+        return Integer.toString(department_id);
+    }
+
+    public String getJobgrade_id() {
+        return Integer.toString(jobgrade_id);
+    }
+
+    public String getEmployee_name() {
+        return employee_name;
+    }
+
+    public String getBase_salary() {
+        return Integer.toString(base_salary);
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public String getSsn() {
+        return ssn;
+    }
+
+    public String getHire_date() {
+        return hire_date;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
     @Override
     public String toString() {
         return employee_id+"\t"+department_id+"\t"+jobgrade_id+"\t"+employee_name+"\t"+base_salary+"\t"+address+"\t"+contact+"\t"+ssn
