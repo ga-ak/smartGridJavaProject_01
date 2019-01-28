@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<StackPane prefHeight="800.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view.MyController">
+   <children>
+      <Label layoutX="128.0" layoutY="127.0" text="결재권자" AnchorPane.leftAnchor="145.0" AnchorPane.topAnchor="97.0">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="276.0" layoutY="98.0" prefHeight="29.0" prefWidth="232.0" />
+      <Label layoutX="145.0" layoutY="204.0" text="결재유형">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="276.0" layoutY="205.0" prefHeight="29.0" prefWidth="232.0">
+         <contextMenu>
+            <ContextMenu id="cont">
+              <items>
+                <MenuItem mnemonicParsing="false" text="aaa" />
+                  <MenuItem mnemonicParsing="false" text="bbb" />
+                  <MenuItem mnemonicParsing="false" text="ccc" />
+                  <MenuItem mnemonicParsing="false" text="aaa" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </ComboBox>
+      <Button layoutX="269.0" layoutY="317.0" mnemonicParsing="false" text="파일 업로드" />
+      <Button layoutX="398.0" layoutY="317.0" mnemonicParsing="false" text="양식다운받기" />
+   </children>
+</StackPane>

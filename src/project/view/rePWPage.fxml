@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.MainController">
+   <children>
+      <ImageView fitHeight="130.0" fitWidth="130.0" layoutX="49.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="20.0">
+         <image>
+            <Image url="@../../../../Users/김태군/Downloads/arduino-1.8.7/lib/arduino.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="180.0" layoutY="177.0" text="ID" AnchorPane.rightAnchor="404.0" />
+      <TextField layoutX="207.0" layoutY="172.0" />
+      <Label layoutX="56.0" layoutY="226.0" text="주민등록번호 뒷자리" AnchorPane.rightAnchor="404.0" />
+      <PasswordField layoutX="207.0" layoutY="221.0" />
+      <Button layoutX="406.0" layoutY="172.0" mnemonicParsing="false" prefHeight="121.0" prefWidth="121.0" text="확인" />
+      <Label layoutX="116.0" layoutY="266.0" text="핸드폰 번호" />
+      <TextField layoutX="207.0" layoutY="261.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <PasswordField layoutX="76.0" layoutY="234.0" prefHeight="40.0" prefWidth="300.0" promptText="PW" />
+      <TextField layoutX="76.0" layoutY="166.0" prefHeight="40.0" prefWidth="300.0" promptText="ID" />
+      <Button layoutX="404.0" layoutY="166.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#Login" prefHeight="111.0" prefWidth="130.0" text="Login">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <CheckBox layoutX="76.0" layoutY="308.0" mnemonicParsing="false" text="Manager Mode" />
+      <ImageView fitHeight="130.0" fitWidth="130.0" layoutX="39.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="20.0">
+         <image>
+            <Image url="@../../../../Users/김태군/Downloads/arduino-1.8.7/lib/arduino.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="76.0" layoutY="341.0" mnemonicParsing="false" onAction="#RePWPage" text="비밀번호가 기억나지 않으십니까?">
+         <effect>
+            <Blend />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
