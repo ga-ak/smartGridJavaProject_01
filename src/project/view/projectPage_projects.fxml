@@ -8,13 +8,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox fx:id="project_inner_hbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="900.0" prefHeight="100.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view.MyController">
+<HBox fx:id="hbox_project_inner" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="900.0" prefHeight="100.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view.MyController">
    <children>
-      <Label alignment="CENTER" maxWidth="300.0" minHeight="100.0" minWidth="300.0" prefWidth="300.0" text="프로젝트 이름">
+      <Label fx:id="lbl_project_name" alignment="CENTER" maxWidth="300.0" minHeight="100.0" minWidth="300.0" prefWidth="300.0" text="프로젝트 이름">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Pane maxHeight="100.0" maxWidth="600.0" minHeight="100.0" minWidth="600.0" prefHeight="100.0" prefWidth="600.0" />
+      <ProgressBar fx:id="pgs_project_name" prefHeight="60.0" prefWidth="500.0" progress="0.0">
+         <HBox.margin>
+            <Insets bottom="20.0" top="20.0" />
+         </HBox.margin>
+      </ProgressBar>
    </children>
 </HBox>

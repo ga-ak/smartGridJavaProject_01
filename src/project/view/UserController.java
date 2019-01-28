@@ -64,10 +64,10 @@ public class UserController implements Initializable {
     }
 
     public void handle_btn_side_project(ActionEvent event) {
-        HBox projectsHbox;
+
         // projectsHBox에 fxml 로딩해옴
         try {
-            projectsHbox = FXMLLoader.load(getClass().getResource("projectPage_projects.fxml"));
+            controller.hbox_project_inner = FXMLLoader.load(getClass().getResource("projectPage_projects.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -94,7 +94,11 @@ public class UserController implements Initializable {
             ArrayList<ArrayList<String>> projectSelected = dao.select("PROJECT",columns2,tempLimit);
 
             for (int j = 0; j < projectSelected.size(); j++) {
-                //controller.project_vbox.
+                HBox hBox = new HBox();
+                hBox.getChildren().add(new Button());
+                hBox.getChildren().add(new Button());
+                System.out.println("여기까진...");
+                controller.vbox_project.getChildren().add(hBox);
             }
         }
 

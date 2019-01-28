@@ -7,9 +7,9 @@ import javafx.scene.layout.VBox;
 public class MyController {
 
     @FXML
-    VBox project_vbox;
+    VBox vbox_project;
     @FXML
-    HBox project_inner_hbox;
+    HBox hbox_project_inner;
 
 
 }
