@@ -146,10 +146,16 @@ public class AutoGenerator_employee {
             System.out.print("주민번호 할당\t");
 
             // 입사일 랜덤 할당
-            hire_date += Integer.toString(ran.nextInt(2)+8); // 년도
-            hire_date += Integer.toString(ran.nextInt(10)); // 년도
+            hire_date += Integer.toString(ran.nextInt(2018-1980+1)+1980); // 년도 1980~2018
+            hire_date += "/";
             hire_date += Integer.toString(ran.nextInt(2)); // 월 첫자리
-            hire_date += Integer.toString(ran.nextInt(3)); // 월 뒷자리
+            // 월 앞자리가 0일경우
+            if (hire_date.substring(hire_date.length()-1,hire_date.length()).equals("0")) {
+                hire_date += Integer.toString(ran.nextInt(9)+1);
+            } else {
+                hire_date += Integer.toString(ran.nextInt(3));
+            }
+            hire_date += "/";
             hire_date += Integer.toString(ran.nextInt(3)); // 일 앞자리 20일대까지만..
             // 일 앞자리가 0일경우
             if (hire_date.substring(hire_date.length()-1,hire_date.length()).equals("0")) {

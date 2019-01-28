@@ -14,7 +14,7 @@ public class insertPractice_main {
         long st = System.currentTimeMillis();
         ag.insertAllEmps(ag.employeeGenerator(dao, startNum, lastNum), dao);
         long et = System.currentTimeMillis();
-        int result = (int)(et-st)/1000;
+        double result = (int)(et-st)/1000.0;
         System.out.println(volume+"회 실행에 걸린 시간 : "+result);
 
     }
