@@ -8,13 +8,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view.UserController">
    <children>
       <BorderPane layoutX="174.0" layoutY="150.0" prefHeight="800.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
             <VBox prefHeight="800.0" prefWidth="300.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="내 정보 보기">
+                  <Button fx:id="btn_side_myInfo" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="내 정보 보기">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
@@ -22,7 +22,7 @@
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="내 프로젝트 관리">
+                  <Button fx:id="btn_side_project" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="내 프로젝트 관리">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -30,7 +30,7 @@
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="게시판 (옵션)">
+                  <Button fx:id="btn_side_bbs" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="게시판 (옵션)">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -38,7 +38,7 @@
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="결재 요청">
+                  <Button fx:id="btn_side_sign" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="결재 요청">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin>
@@ -46,10 +46,7 @@
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="알림 확인">
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
+                  <Button fx:id="btn_side_announce" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="알림 확인">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -59,7 +56,7 @@
             </VBox>
          </left>
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <StackPane fx:id="user_inner_stack" prefHeight="800.0" prefWidth="900.0" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </children>

@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="900.0" prefHeight="100.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="project_inner_hbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="900.0" prefHeight="100.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view.MyController">
    <children>
       <Label alignment="CENTER" maxWidth="300.0" minHeight="100.0" minWidth="300.0" prefWidth="300.0" text="프로젝트 이름">
          <font>

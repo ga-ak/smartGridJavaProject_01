@@ -77,7 +77,7 @@ public class AutoGenerator_employee {
                     employee_name += names[j][ranNum];
                 }
             }
-            System.out.print(k+" >> 이름생성\t");
+            //System.out.print(k+" >> 이름생성\t");
 
             // 이름 출력
 //        for (int i = 0; i < result.length; i++) {
@@ -87,20 +87,20 @@ public class AutoGenerator_employee {
 
             // 부서 랜덤 할당
             department_id = 100 + 10 * (ran.nextInt(depSize));
-            System.out.print("부서 할당\t");
+            //System.out.print("부서 할당\t");
 
             // 직급 랜덤 할당
             jobgrade_id = ran.nextInt(jobSize) + 1;
-            System.out.print("직급 할당\t");
+            //System.out.print("직급 할당\t");
 
             // 기본급 랜덤 할당
             base_salary = ran.nextInt(800)+200;
             base_salary = base_salary / 10 * 10; // 일의 자리 버림
-            System.out.print("기본급 할당\t");
+            //System.out.print("기본급 할당\t");
             // 주소 랜덤 할당
 
             address = addresses[ran.nextInt(addresses.length)];
-            System.out.print("주소 할당 \t");
+            //System.out.print("주소 할당 \t");
             // 전화번호 랜덤 할당
             while (true) {
                 contact = "010";
@@ -112,7 +112,7 @@ public class AutoGenerator_employee {
                     break;
                 }
             }
-            System.out.print("전화번호 할당\t");
+            //System.out.print("전화번호 할당\t");
 
             // 주민번호 랜덤 할당
             while (true) {
@@ -143,7 +143,7 @@ public class AutoGenerator_employee {
                     break;
                 }
             }
-            System.out.print("주민번호 할당\t");
+            //System.out.print("주민번호 할당\t");
 
             // 입사일 랜덤 할당
             hire_date += Integer.toString(ran.nextInt(2018-1980+1)+1980); // 년도 1980~2018
@@ -163,7 +163,7 @@ public class AutoGenerator_employee {
             } else {
                 hire_date += Integer.toString(ran.nextInt(10));
             }
-            System.out.print("입사일 할당\t");
+            //System.out.print("입사일 할당\t");
 
             // 비밀번호 랜덤 할당
             int passwordSize = ran.nextInt(5)+8;
@@ -183,11 +183,11 @@ public class AutoGenerator_employee {
                 //System.out.println((int)tempP+"\t"+tempP);
                 password += tempP;
             }
-            System.out.println("비밀번호 할당");
+            //System.out.println("비밀번호 할당");
 
             EmployeeVO emp = new EmployeeVO(k, department_id, jobgrade_id, employee_name, base_salary, address, contact, ssn, hire_date, password);
             result.add(emp);
-            //System.out.println(k+" 번째 생성!");
+            System.out.println(emp);
         }
         System.out.println("ArrayList 생성 완료!");
         return result;
