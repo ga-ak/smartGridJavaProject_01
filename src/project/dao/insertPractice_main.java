@@ -1,4 +1,4 @@
-package dao;
+package project.dao;
 
 public class insertPractice_main {
 

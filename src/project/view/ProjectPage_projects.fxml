@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="100.0" minWidth="900.0" prefHeight="100.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" maxWidth="300.0" minHeight="100.0" minWidth="300.0" prefWidth="300.0" text="프로젝트 이름">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Pane maxHeight="100.0" maxWidth="600.0" minHeight="100.0" minWidth="600.0" prefHeight="100.0" prefWidth="600.0" />
+   </children>
+</HBox>

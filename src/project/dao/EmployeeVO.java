@@ -1,4 +1,4 @@
-package dao;
+package project.dao;
 
 public class EmployeeVO {
     private int employee_id;
