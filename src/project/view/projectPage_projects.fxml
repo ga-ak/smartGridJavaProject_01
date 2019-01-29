@@ -15,10 +15,15 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <ProgressBar fx:id="pgs_project_name" prefHeight="60.0" prefWidth="500.0" progress="0.0">
+      <ProgressBar fx:id="pgs_project_name" prefHeight="60.0" prefWidth="336.0" progress="0.0">
          <HBox.margin>
             <Insets bottom="20.0" top="20.0" />
          </HBox.margin>
       </ProgressBar>
+      <Label fx:id="lbl_project_members" alignment="CENTER" maxWidth="300.0" minHeight="100.0" minWidth="300.0" prefWidth="300.0" text="프로젝트 참여인원">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </HBox>

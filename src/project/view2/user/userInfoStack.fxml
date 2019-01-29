@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane fx:id="stack_userInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="사원 정보">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <VBox alignment="TOP_CENTER" prefHeight="767.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" text="사원정보 조회 및 수정" />
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="이름 : " />
+                                    <Label maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Label" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="사원번호 : " />
+                                    <Label maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Label" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="부서 : " />
+                                    <Label maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Label" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="직급 : " />
+                                    <Label maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Label" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="입사일 : " />
+                                    <Label maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Label" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="주소 : " />
+                                    <TextField alignment="TOP_LEFT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="연락처 : " />
+                                    <TextField maxHeight="20.0" minHeight="20.0" prefHeight="20.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </center>
+                     <bottom>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" text="비밀번호 변경">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button mnemonicParsing="false" text="저장">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </content>
+          </Tab>
+          <Tab text="근무 이력">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label minHeight="20.0" text="검색 시작일">
+                                             <VBox.margin>
+                                                <Insets bottom="30.0" />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label minWidth="20.0" text="검색 종료일" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <DatePicker minHeight="20.0" minWidth="150.0" prefHeight="20.0" prefWidth="150.0">
+                                             <VBox.margin>
+                                                <Insets bottom="30.0" />
+                                             </VBox.margin>
+                                          </DatePicker>
+                                          <DatePicker minHeight="20.0" minWidth="150.0" prefHeight="20.0" prefWidth="150.0" />
+                                       </children>
+                                    </VBox>
+                                    <Button minHeight="50.0" minWidth="100.0" mnemonicParsing="false" text="검색">
+                                       <HBox.margin>
+                                          <Insets left="30.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <TableView prefHeight="587.0" prefWidth="940.0">
+                                <columns>
+                                  <TableColumn prefWidth="75.0" text="C1" />
+                                  <TableColumn prefWidth="75.0" text="C2" />
+                                </columns>
+                                 <VBox.margin>
+                                    <Insets left="30.0" right="30.0" top="30.0" />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </center>
+                     <bottom>
+                        <HBox alignment="CENTER_RIGHT" minHeight="50.0" prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button mnemonicParsing="false" text="엑셀 내보내기">
+                                 <HBox.margin>
+                                    <Insets right="30.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </bottom>
+                  </BorderPane>
+               </content>
+          </Tab>
+            <Tab text="추가 수당">
+                <content>
+                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                        <center>
+                            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                        <children>
+                                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                <children>
+                                                    <Label minHeight="20.0" text="검색 시작일">
+                                                        <VBox.margin>
+                                                            <Insets bottom="30.0" />
+                                                        </VBox.margin>
+                                                    </Label>
+                                                    <Label minWidth="20.0" text="검색 종료일" />
+                                                </children>
+                                            </VBox>
+                                            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                <children>
+                                                    <DatePicker minHeight="20.0" minWidth="150.0" prefHeight="20.0" prefWidth="150.0">
+                                                        <VBox.margin>
+                                                            <Insets bottom="30.0" />
+                                                        </VBox.margin>
+                                                    </DatePicker>
+                                                    <DatePicker minHeight="20.0" minWidth="150.0" prefHeight="20.0" prefWidth="150.0" />
+                                                </children>
+                                            </VBox>
+                                            <Button minHeight="50.0" minWidth="100.0" mnemonicParsing="false" text="검색">
+                                                <HBox.margin>
+                                                    <Insets left="30.0" />
+                                                </HBox.margin>
+                                            </Button>
+                                        </children>
+                                        <VBox.margin>
+                                            <Insets top="30.0" />
+                                        </VBox.margin>
+                                    </HBox>
+                                    <TableView prefHeight="587.0" prefWidth="940.0">
+                                        <columns>
+                                            <TableColumn prefWidth="75.0" text="C1" />
+                                            <TableColumn prefWidth="75.0" text="C2" />
+                                        </columns>
+                                        <VBox.margin>
+                                            <Insets left="30.0" right="30.0" top="30.0" />
+                                        </VBox.margin>
+                                    </TableView>
+                                </children>
+                            </VBox>
+                        </center>
+                        <bottom>
+                            <HBox alignment="CENTER_RIGHT" minHeight="50.0" prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                                <children>
+                                    <Button mnemonicParsing="false" text="엑셀 내보내기">
+                                        <HBox.margin>
+                                            <Insets right="30.0" />
+                                        </HBox.margin>
+                                    </Button>
+                                </children>
+                            </HBox>
+                        </bottom>
+                    </BorderPane>
+                </content>
+            </Tab>
+          </tabs>
+      </TabPane>
+   </children>
+</StackPane>

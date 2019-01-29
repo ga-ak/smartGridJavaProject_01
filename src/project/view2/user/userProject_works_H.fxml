@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox fx:id="hbox_works" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="대주제이름">
+            <HBox.margin>
+                <Insets bottom="10.0" top="10.0" />
+            </HBox.margin>
+        </Label>
+        <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="소주제 이름">
+            <HBox.margin>
+                <Insets bottom="10.0" top="10.0" />
+            </HBox.margin>
+        </Label>
+        <Label alignment="CENTER" prefHeight="50.0" prefWidth="275.0" text="소주제 설명">
+            <HBox.margin>
+                <Insets bottom="10.0" top="10.0" />
+            </HBox.margin>
+        </Label>
+        <Label alignment="CENTER" prefHeight="50.0" prefWidth="275.0" text="소주제 기간">
+            <HBox.margin>
+                <Insets bottom="10.0" top="10.0" />
+            </HBox.margin>
+        </Label>
+      <Label alignment="CENTER" prefHeight="50.0" prefWidth="75.0" text="상태">
+         <HBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </HBox.margin>
+      </Label>
+      <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="제출">
+         <HBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </HBox.margin>
+      </Button>
+    </children>
+</HBox>
