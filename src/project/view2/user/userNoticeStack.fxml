@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -7,4 +8,43 @@
 <?import javafx.scene.layout.*?>
 
 
-<StackPane fx:id="stack_userNotice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" />
+<StackPane fx:id="stack_userNotice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <bottom>
+            <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" text="모든 알림 확인하기">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="확인하지 않은 알림">
+                     <padding>
+                        <Insets bottom="30.0" top="30.0" />
+                     </padding>
+                  </Label>
+                  <TableView minHeight="673.0" prefHeight="200.0" prefWidth="673.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="30.0" right="30.0" />
+               </BorderPane.margin>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

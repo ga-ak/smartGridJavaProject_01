@@ -14,7 +14,7 @@
          <left>
             <VBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="내 정보 보기" underline="true">
+                  <Button fx:id="btn_userInfo" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="내 정보 보기" underline="true">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -22,7 +22,7 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="내 프로젝트 보기" underline="true">
+                  <Button fx:id="btn_userProject" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="내 프로젝트 보기" underline="true">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -30,7 +30,7 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="결재 요청" underline="true">
+                  <Button fx:id="btn_userSign" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="결재 요청" underline="true">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -38,7 +38,7 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="알림 확인" underline="true">
+                  <Button fx:id="btn_userNotice" mnemonicParsing="false" prefHeight="70.0" prefWidth="200.0" text="알림 확인" underline="true">
                      <font>
                         <Font size="15.0" />
                      </font>
