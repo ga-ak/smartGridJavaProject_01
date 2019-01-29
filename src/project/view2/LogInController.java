@@ -2,16 +2,24 @@ package project.view2;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import project.dao.DAO;
 import project.view2.DAOContainer;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class LogInController {
 
     DAO dao;
     ArrayList<String> columns;
+    FXMLLoader fxmlLoader;
+
 
     @FXML private TextField txf_loginID;
     @FXML private TextField txf_loginPW;
@@ -56,7 +64,20 @@ public class LogInController {
     }
 
     public void handle_hpl_loginPW_find(ActionEvent event) {
-
+        try {
+            fxmlLoader = new FXMLLoader(getClass().getResource("PWDial.fxml"));
+            AnchorPane anchorFindPW = fxmlLoader.load();
+            PWDial controller = fxmlLoader.getController();
+            Stage parent = (Stage)btn_login.getScene().getWindow();
+            Stage dialogStage = new Stage();
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(parent);
+            Scene scene = new Scene(anchorFindPW);
+            dialogStage.setScene(scene);
+            dialogStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
