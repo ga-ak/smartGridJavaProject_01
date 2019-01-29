@@ -8,7 +8,7 @@ public class AutoGenerator_employee {
 
     //
 
-    public ArrayList<EmployeeVO> employeeGenerator(Project_DAO dao, int startNum, int lastNum) {
+    public ArrayList<EmployeeVO> employeeGenerator(DAO dao, int startNum, int lastNum) {
 
         System.out.println("ArrayList 생성 시작....");
         HashSet<String> contacts = new HashSet<>();
@@ -193,7 +193,7 @@ public class AutoGenerator_employee {
         return result;
     }
 
-    public void insertAllEmps(ArrayList<EmployeeVO> result, Project_DAO dao) {
+    public void insertAllEmps(ArrayList<EmployeeVO> result, DAO dao) {
         ArrayList<String> columns = new ArrayList<>();
         ArrayList<ArrayList<String>> valueArrays = new ArrayList<>();
         columns.add("EMPLOYEE_ID");

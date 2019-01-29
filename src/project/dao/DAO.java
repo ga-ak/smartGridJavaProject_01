@@ -3,12 +3,12 @@ package project.dao;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class Project_DAO implements DAO_interface {
+public class DAO implements DAO_interface {
     Connection conn = null;
     PreparedStatement psmt = null;
     Controller controller;
 
-    public Project_DAO(Controller controller) {
+    public DAO(Controller controller) {
         this.controller = controller;
     }
 

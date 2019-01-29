@@ -6,7 +6,7 @@ public class insertPractice_main {
 
     public static void main(String[] args) {
         Controller controller = new Controller();
-        Project_DAO dao = new Project_DAO(controller);
+        DAO dao = new DAO(controller);
         AutoGenerator_employee ag = new AutoGenerator_employee();
         int startNum = 1000;
         int lastNum = 2000;

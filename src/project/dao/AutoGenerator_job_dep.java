@@ -8,7 +8,7 @@ public class AutoGenerator_job_dep {
 
     public static void main(String[] args) {
         Controller controller = new Controller();
-        Project_DAO dao = new Project_DAO(controller);
+        DAO dao = new DAO(controller);
 
         String[] job_grades = {
                 "수습사원", "사원", "주임", "계장", "대리", "과장", "차장", "부장", "이사","사장"

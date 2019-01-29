@@ -10,7 +10,7 @@ public class DAO_practice_main {
     public static void main(String[] args) {
 
         Controller controller = new Controller();
-        Project_DAO dao = new Project_DAO(controller);
+        DAO dao = new DAO(controller);
 
         //String[] columns = {"JOBGRADE_ID", "JOBGRADE_NAME"};
         //CERTIFICATE_ID, CERTIFICATE_NAME, CERTIFICATE_MONEY

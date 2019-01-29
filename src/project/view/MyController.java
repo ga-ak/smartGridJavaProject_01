@@ -5,19 +5,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import project.dao.Project_DAO;
+import project.dao.DAO;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class MyController {
-    Project_DAO dao;
+    DAO dao;
     @FXML
     VBox vbox_project;
     @FXML
     HBox hbox_project_inner;
 
-    public MyController(Project_DAO dao) {
+    public MyController(DAO dao) {
         this.dao = dao;
     }
 

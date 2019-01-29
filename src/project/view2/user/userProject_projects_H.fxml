@@ -7,29 +7,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox fx:id="hbox_projects" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="hbox_projects" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserController">
    <children>
-      <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="프로젝트 이름">
+      <Label fx:id="lbl_projectName" alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="프로젝트 이름">
          <HBox.margin>
             <Insets bottom="10.0" top="10.0" />
          </HBox.margin>
       </Label>
-      <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="프로젝트 담당자">
+      <Label fx:id="lbl_projectLeader" alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="프로젝트 담당자">
          <HBox.margin>
             <Insets bottom="10.0" top="10.0" />
          </HBox.margin>
       </Label>
-      <ProgressBar prefHeight="50.0" prefWidth="275.0" progress="0.0">
+      <ProgressBar fx:id="pgb_projectPG" prefHeight="50.0" prefWidth="275.0" progress="0.0">
          <HBox.margin>
             <Insets bottom="10.0" top="10.0" />
          </HBox.margin>
       </ProgressBar>
-      <Label alignment="CENTER" prefHeight="50.0" prefWidth="275.0" text="프로젝트 기간">
+      <Label fx:id="lbl_projectPeriod" alignment="CENTER" prefHeight="50.0" prefWidth="275.0" text="프로젝트 기간">
          <HBox.margin>
             <Insets bottom="10.0" top="10.0" />
          </HBox.margin>
       </Label>
-      <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="프로젝트 인원">
+      <Label fx:id="lbl_projectNumber" alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="프로젝트 인원">
          <HBox.margin>
             <Insets bottom="10.0" top="10.0" />
          </HBox.margin>

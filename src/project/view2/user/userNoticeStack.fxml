@@ -7,14 +7,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<StackPane fx:id="stack_userNotice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="stack_userNotice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <bottom>
             <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" text="모든 알림 확인하기">
+                  <Button fx:id="btn_noticeCheck" mnemonicParsing="false" text="모든 알림 확인하기">
                      <HBox.margin>
                         <Insets right="30.0" />
                      </HBox.margin>
@@ -25,12 +24,12 @@
          <center>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <Label text="확인하지 않은 알림">
+                  <Label fx:id="lbl_noticeState" text="확인하지 않은 알림">
                      <padding>
                         <Insets bottom="30.0" top="30.0" />
                      </padding>
                   </Label>
-                  <TableView minHeight="673.0" prefHeight="200.0" prefWidth="673.0">
+                  <TableView fx:id="tbv_noticeTable" minHeight="673.0" prefHeight="200.0" prefWidth="673.0">
                     <columns>
                       <TableColumn prefWidth="75.0" text="C1" />
                       <TableColumn prefWidth="75.0" text="C2" />

@@ -7,20 +7,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane fx:id="stack_inner_project" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="stack_inner_project" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>
             <ScrollPane hbarPolicy="NEVER" prefHeight="800.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                <content>
-                  <VBox prefHeight="800.0" prefWidth="1000.0" />
+                  <VBox fx:id="vbox_inner_project" prefHeight="800.0" prefWidth="1000.0" />
                </content>
             </ScrollPane>
          </center>
          <bottom>
             <HBox alignment="CENTER_RIGHT" minHeight="50.0" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="프로젝트 변경">
+                  <Button fx:id="btn_inner_change" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="프로젝트 변경">
                      <HBox.margin>
                         <Insets bottom="10.0" right="50.0" top="10.0" />
                      </HBox.margin>
@@ -31,7 +31,7 @@
          <top>
             <HBox minHeight="50.0" prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="뒤로가기">
+                  <Button fx:id="btn_inner_back" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="뒤로가기">
                      <HBox.margin>
                         <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
                      </HBox.margin>

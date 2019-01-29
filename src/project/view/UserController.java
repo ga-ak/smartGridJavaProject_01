@@ -5,23 +5,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import project.dao.Controller;
-import project.dao.Project_DAO;
+import project.dao.DAO;
 
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class UserController implements Initializable {
 
     //private MyController controller;
     private Controller con;
-    private Project_DAO dao;
+    private DAO dao;
     private String loggedId = "1000";
     @FXML private StackPane user_inner_stack;
     @FXML private Button btn_side_myInfo;
@@ -39,7 +36,7 @@ public class UserController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         //con = new Controller();
-        dao = new Project_DAO(new Controller());
+        dao = new DAO(new Controller());
 
         //controller = new MyController(dao);
 
