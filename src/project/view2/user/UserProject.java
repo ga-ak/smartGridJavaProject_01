@@ -33,9 +33,12 @@ public class UserProject implements Initializable {
     HBox hbox_project;
     HBox hbox_work;
 
+    static int focus = 0;
+    static ArrayList<StackPane> projectStacks = new ArrayList<>();
     DAO dao = DAOContainer.dao;
     String loggedID = LoginInfo.loggedID;
     ArrayList<HBox> hBoxArrayList;
+    ArrayList<ArrayList<String>> selected1;
 
     @FXML private VBox vbox_project;
 
@@ -66,7 +69,7 @@ public class UserProject implements Initializable {
         column3.add("employee_name");
         column4.add("distinct employee_id");
 
-        ArrayList<ArrayList<String>> selected1 = dao.select("project_works", column1, limit1);
+        selected1 = dao.select("project_works", column1, limit1);
         hBoxArrayList = new ArrayList<>();
 
         for (int i = 0; i < selected1.size(); i++) {
@@ -114,16 +117,26 @@ public class UserProject implements Initializable {
     public void handle_hbox_member(int i) {
         System.out.println(i+"hbox clicked!");
         FXMLLoader innerLoader = new FXMLLoader(getClass().getResource("userProject_inner_Stack.fxml"));
+        UserProject_inner innerController = new UserProject_inner(getProjectID(i));
+        innerController.setUserInnerPage(stack_user_inner);
         try {
+            innerLoader.setController(innerController);
             stack_inner = innerLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        projectStacks.add(stack_inner);
+        focus++;
         stack_user_inner.getChildren().clear();
-        stack_user_inner.getChildren().add(stack_inner);
+        stack_user_inner.getChildren().add(projectStacks.get(focus));
     }
 
-    public void getUserInnerPage(StackPane stack_user_inner) {
+    public void setUserInnerPage(StackPane stack_user_inner) {
+
         this.stack_user_inner = stack_user_inner;
+    }
+
+    public String getProjectID(int index) {
+        return selected1.get(index).get(0);
     }
 }

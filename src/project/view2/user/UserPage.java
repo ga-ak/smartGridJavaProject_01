@@ -3,18 +3,8 @@ package project.view2.user;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import project.view2.PWDial;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class UserPage {
 
@@ -49,9 +39,9 @@ public class UserPage {
             stack_userProject = userProjectLoader.load();
             stack_userSign = userSignLoader.load();
             stack_userNotice = userNoticeLoader.load();
-
+            UserProject.projectStacks.add(stack_userProject);
             projectController = userProjectLoader.getController();
-            projectController.getUserInnerPage(stack_user_inner);
+            projectController.setUserInnerPage(stack_user_inner);
 
             btn_userInfo.setOnAction(event -> handle_btn_userInfo(event));
             btn_userProject.setOnAction(event -> handle_btn_userProject(event));

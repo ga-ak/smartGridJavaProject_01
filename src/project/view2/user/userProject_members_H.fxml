@@ -20,10 +20,18 @@
                 <Insets bottom="10.0" top="10.0" />
             </HBox.margin>
         </Label>
-        <ProgressBar fx:id="pgb_memberPG" prefHeight="50.0" prefWidth="275.0" progress="0.0">
+        <ProgressBar fx:id="pgb_memberPG" prefHeight="50.0" prefWidth="200.0" progress="0.0">
             <HBox.margin>
                 <Insets bottom="10.0" top="10.0" />
             </HBox.margin>
         </ProgressBar>
+      <Label alignment="CENTER" prefHeight="50.0" prefWidth="250.0" text="대주제 기간">
+         <HBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </HBox.margin>
+      </Label>
     </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
 </HBox>
