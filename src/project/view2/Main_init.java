@@ -10,6 +10,8 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.dao.Controller;
 import project.dao.DAO;
+import project.view2.user.UserController;
+import project.view2.user.UserPage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -48,6 +50,7 @@ public class Main_init implements Initializable{
                 System.out.println("사용자로 로그인!");
                 FXMLLoader userLoader = new FXMLLoader(getClass().getResource("user/userPage.fxml"));
                 StackPane testPane = userLoader.load();
+                //UserController userController = userLoader.getController();
                 stack_main.getChildren().add(testPane);
 
             } else {

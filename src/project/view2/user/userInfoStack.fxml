@@ -7,17 +7,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane fx:id="stack_userInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserController">
+<StackPane fx:id="stack_userInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="783.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserController">
    <children>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane focusTraversable="false" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="사원 정보">
+          <Tab closable="false" text="사원 정보">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
                         <VBox alignment="TOP_CENTER" prefHeight="767.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Label alignment="CENTER" minHeight="20.0" prefHeight="20.0" text="사원정보 조회 및 수정">
+                              <Label alignment="CENTER" minHeight="17.0" prefHeight="17.0" text="사원정보 조회 및 수정">
                                  <VBox.margin>
                                     <Insets bottom="20.0" top="20.0" />
                                  </VBox.margin></Label>

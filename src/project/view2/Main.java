@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import project.dao.Controller;
 import project.dao.DAO;
 import project.view2.DAOContainer;
+import project.view2.user.UserController;
 
 public class Main extends Application {
 
@@ -38,6 +39,12 @@ public class Main extends Application {
         primaryStage.setTitle("삼종 치즈 토핑 - 프로젝트 중심 인사 관리 프로그램");
         primaryStage.setScene(scene);
         primaryStage.show();
+        if (loginState == 2) {
+            FXMLLoader userLoader = new FXMLLoader(getClass().getResource("user/userPage.fxml"));
+            StackPane testPane = userLoader.load();
+            UserController userController = userLoader.getController();
+
+        }
 
     }
 }
