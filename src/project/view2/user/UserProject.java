@@ -117,7 +117,7 @@ public class UserProject implements Initializable {
     public void handle_hbox_member(int i) {
         System.out.println(i+"hbox clicked!");
         FXMLLoader innerLoader = new FXMLLoader(getClass().getResource("userProject_inner_Stack.fxml"));
-        UserProject_inner innerController = new UserProject_inner(getProjectID(i));
+        UserProject_inner innerController = new UserProject_inner(getProjectID(i),1);
         innerController.setUserInnerPage(stack_user_inner);
         try {
             innerLoader.setController(innerController);

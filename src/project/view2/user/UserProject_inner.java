@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -25,24 +24,64 @@ public class UserProject_inner implements Initializable {
     DAO dao = DAOContainer.dao;
     ArrayList<HBox> hBoxArrayList;
     ArrayList<ArrayList<String>> memberSelected;
+    ArrayList<ArrayList<String>> workSelected;
+    int page;
 
     @FXML VBox vbox_inner_project;
     @FXML Button btn_inner_back;
     @FXML Button btn_inner_change;
 
 
-    public UserProject_inner(String projectID) {
+    public UserProject_inner(String projectID, int page) {
         this.projectID = projectID;
+        this.page = page;
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        makeMemberPage(getMembers());
-        for (int i = 0; i < hBoxArrayList.size(); i++) {
-            final int index = i;
-            hBoxArrayList.get(i).setOnMouseClicked(event -> handle_hbox_work(index));
+
+        if (page == 1) {
+            System.out.println("this is page 1");
+            makeVboxPage(getMembers());
+
+            for (int i = 0; i < hBoxArrayList.size(); i++) {
+                final int index = i;
+                hBoxArrayList.get(i).setOnMouseClicked(event -> handle_hbox_work(index));
+            }
+
+
+        } else if (page == 2) {
+            System.out.println("this is page 2");
+
+            //makeVboxPage(getWorks());
+        } else {
+            System.out.println("any page didn't selected!");
         }
         btn_inner_back.setOnAction(event -> handle_btn_inner_back(event));
+    }
+
+    public void handle_btn_inner_back(ActionEvent event) {
+        UserProject.focus--;
+        stack_user_inner.getChildren().clear();
+        stack_user_inner.getChildren().add(UserProject.projectStacks.get(UserProject.focus));
+
+    }
+
+    public void handle_hbox_work(int i) {
+        System.out.println(i+"hbox clicked!");
+        FXMLLoader innerLoader = new FXMLLoader(getClass().getResource("userProject_inner_Stack.fxml"));
+
+        UserProject_inner innerController = new UserProject_inner(getWorkName(i), 2);
+        try {
+            innerLoader.setController(innerController);
+            stack_inner = innerLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        UserProject.projectStacks.add(stack_inner);
+        UserProject.focus++;
+        stack_user_inner.getChildren().clear();
+        stack_user_inner.getChildren().add(UserProject.projectStacks.get(UserProject.focus));
     }
 
     public ArrayList<HBox> getMembers() {
@@ -85,41 +124,69 @@ public class UserProject_inner implements Initializable {
         return hBoxArrayList;
     }
 
-    public void makeMemberPage(ArrayList<HBox> hBoxArrayList) {
+    public void makeVboxPage(ArrayList<HBox> hBoxArrayList) {
         for (int i = 0; i < hBoxArrayList.size(); i++) {
             vbox_inner_project.getChildren().add(hBoxArrayList.get(i));
         }
     }
 
-    public void handle_btn_inner_back(ActionEvent event) {
-        UserProject.focus--;
-        stack_user_inner.getChildren().clear();
-        stack_user_inner.getChildren().add(UserProject.projectStacks.get(UserProject.focus));
+    public ArrayList<HBox> getWorks(String employeeID, String projectID) {
+        ArrayList<String> columns = new ArrayList<>();
 
-    }
+        columns.add("work_name");
+        columns.add("start_date");
+        columns.add("end_date");
+        columns.add("result");
+        columns.add("sign");
 
-    public void handle_hbox_work(int i) {
-        System.out.println(i+"hbox clicked!");
-        FXMLLoader innerLoader = new FXMLLoader(getClass().getResource("userProject_inner_Stack.fxml"));
-        UserProject_inner innerController = new UserProject_inner(getMemberID(i));
-        try {
-            innerLoader.setController(innerController);
-            stack_inner = innerLoader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
+        String limit = "employee_id = " + employeeID+" and project_id = "+projectID;
+        workSelected = dao.select("project_works", columns, limit);
+
+        hBoxArrayList = new ArrayList<>();
+
+        for (int i = 0; i < workSelected.size(); i++) {
+            String workName = workSelected.get(i).get(0);
+            String startDate = workSelected.get(i).get(1);
+            String endDate = workSelected.get(i).get(2);
+            String result = workSelected.get(i).get(3);
+            String sign = workSelected.get(i).get(4);
+
+            HBox tempMember = null;
+            try {
+                FXMLLoader tempLoader = new FXMLLoader(getClass().getResource("userProject_works_H.fxml"));
+                tempMember = tempLoader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Label tempWorkName = (Label) tempMember.getChildren().get(0);
+            Label tempWPeriod = (Label) tempMember.getChildren().get(3);
+            Label tempWState = (Label) tempMember.getChildren().get(4);
+
+            tempWorkName.setText(workName);
+            tempWPeriod.setText(startDate + " ~ " + endDate);
+            if (result == null) {
+                tempWState.setText("×");
+            } else if (result != null && sign.equals("0")) {
+                tempWState.setText("△");
+            } else {
+                tempWState.setText("○");
+            }
+
+
+            hBoxArrayList.add(tempMember);
         }
-        UserProject.projectStacks.add(stack_inner);
-        UserProject.focus++;
-        stack_user_inner.getChildren().clear();
-        stack_user_inner.getChildren().add(UserProject.projectStacks.get(UserProject.focus));
+        return hBoxArrayList;
     }
+
+
+
 
     public void setUserInnerPage(StackPane stack_user_inner) {
 
         this.stack_user_inner = stack_user_inner;
     }
 
-    public String getMemberID(int index) {
+    public String getWorkName(int index) {
         return memberSelected.get(index).get(0);
     }
 
