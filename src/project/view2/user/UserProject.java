@@ -1,5 +1,6 @@
 package project.view2.user;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,42 +26,35 @@ public class UserProject implements Initializable {
     FXMLLoader memberLoader;
     FXMLLoader workLoader;
 
+    StackPane stack_project;
     StackPane stack_inner;
+    StackPane stack_user_inner;
     HBox hbox_member;
     HBox hbox_project;
     HBox hbox_work;
 
     DAO dao = DAOContainer.dao;
     String loggedID = LoginInfo.loggedID;
+    ArrayList<HBox> hBoxArrayList;
 
     @FXML private VBox vbox_project;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        innerLoader = new FXMLLoader(getClass().getResource("userProject_inner_Stack"));
-//        projectLoader = new FXMLLoader(getClass().getResource("userProject_projects_H"));
-//        memberLoader = new FXMLLoader(getClass().getResource("userProject_members_H"));
-//        workLoader = new FXMLLoader(getClass().getResource("userProject_works_H"));
-//
-//        try {
-//            stack_inner = innerLoader.load();
-//            hbox_project = projectLoader.load();
-//            hbox_member = memberLoader.load();
-//            hbox_work = workLoader.load();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
-        getProjects();
+        makeProjectPage(getProjects());
+        for (int i = 0; i < hBoxArrayList.size(); i++) {
+            final int index = i;
+            hBoxArrayList.get(i).setOnMouseClicked(event -> handle_hbox_member(index));
+        }
 
     }
 
-    public void getProjects() {
+    public ArrayList<HBox> getProjects() {
         ArrayList<String> column1 = new ArrayList<>();
         ArrayList<String> column2 = new ArrayList<>();
         ArrayList<String> column3 = new ArrayList<>();
         ArrayList<String> column4 = new ArrayList<>();
-
 
         column1.add("distinct project_id");
         String limit1 = "employee_id = "+ loggedID;
@@ -72,9 +66,8 @@ public class UserProject implements Initializable {
         column3.add("employee_name");
         column4.add("distinct employee_id");
 
-
-
         ArrayList<ArrayList<String>> selected1 = dao.select("project_works", column1, limit1);
+        hBoxArrayList = new ArrayList<>();
 
         for (int i = 0; i < selected1.size(); i++) {
 
@@ -102,14 +95,35 @@ public class UserProject implements Initializable {
             Label tempPJNumber = (Label) tempProject.getChildren().get(4);
             ProgressBar tempPJbar = new ProgressBar();
 
-
             tempPJName.setText(projectName);
             tempPJLeaderName.setText(leaderName);
             tempPJPeriod.setText(startDate + " ~ " + endDate);
             tempPJNumber.setText(Integer.toString(projectNumber));
-//            tempProject.getChildren().addAll(tempPJName,tempPJLeaderName,tempPJPeriod,tempPJNumber);
-           // tempProject.getChildren().add(tempPJName);
-            vbox_project.getChildren().add(tempProject);
+
+            hBoxArrayList.add(tempProject);
         }
+        return hBoxArrayList;
+    }
+
+    public void makeProjectPage(ArrayList<HBox> hBoxArrayList) {
+        for (int i = 0; i < hBoxArrayList.size(); i++) {
+            vbox_project.getChildren().add(hBoxArrayList.get(i));
+        }
+    }
+
+    public void handle_hbox_member(int i) {
+        System.out.println(i+"hbox clicked!");
+        FXMLLoader innerLoader = new FXMLLoader(getClass().getResource("userProject_inner_Stack.fxml"));
+        try {
+            stack_inner = innerLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stack_user_inner.getChildren().clear();
+        stack_user_inner.getChildren().add(stack_inner);
+    }
+
+    public void getUserInnerPage(StackPane stack_user_inner) {
+        this.stack_user_inner = stack_user_inner;
     }
 }

@@ -42,16 +42,12 @@
                </children>
             </VBox>
          </left>
-         <center>
-            <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <content>
-                  <StackPane fx:id="stack_user_inner" prefHeight="783.0" prefWidth="950.0" />
-               </content>
-            </ScrollPane>
-         </center>
          <top>
             <Label text="사용자단 화면" BorderPane.alignment="CENTER" />
          </top>
+         <center>
+            <StackPane fx:id="stack_user_inner" prefHeight="783.0" prefWidth="950.0" BorderPane.alignment="CENTER" />
+         </center>
       </BorderPane>
    </children>
 </StackPane>

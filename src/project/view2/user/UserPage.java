@@ -27,6 +27,8 @@ public class UserPage {
     StackPane stack_userSign;
     StackPane stack_userNotice;
 
+    UserProject projectController;
+
     @FXML private StackPane stack_user_inner;
     @FXML private StackPane stack_userPage;
     @FXML private Button btn_userInfo;
@@ -47,6 +49,9 @@ public class UserPage {
             stack_userProject = userProjectLoader.load();
             stack_userSign = userSignLoader.load();
             stack_userNotice = userNoticeLoader.load();
+
+            projectController = userProjectLoader.getController();
+            projectController.getUserInnerPage(stack_user_inner);
 
             btn_userInfo.setOnAction(event -> handle_btn_userInfo(event));
             btn_userProject.setOnAction(event -> handle_btn_userProject(event));
