@@ -19,7 +19,9 @@ public class LogInController {
     DAO dao;
     ArrayList<String> columns;
     FXMLLoader fxmlLoader;
-
+    boolean isADM;
+    int loginState;
+    Stage dialog;
 
     @FXML private TextField txf_loginID;
     @FXML private TextField txf_loginPW;
@@ -35,13 +37,14 @@ public class LogInController {
         columns = new ArrayList<>();
         columns.add("password");
         columns.add("department_id");
+
         btn_login.setOnAction(event -> handle_btn_login(event));
         hpl_loginPW_find.setOnAction(event -> handle_hpl_loginPW_find(event));
     }
 
     public void handle_btn_login(ActionEvent event) {
-
-        boolean isADM = chb_loginADM.isSelected();
+        loginState = 0;
+        isADM = chb_loginADM.isSelected();
 
         String loggedID = txf_loginID.getText();
         System.out.println("입력한 아이디 : "+loggedID);
@@ -55,12 +58,20 @@ public class LogInController {
         String selectedPW = tempResult.get(0).get(0);
         String selectedDept = tempResult.get(0).get(1);
         if (isADM && loggedPW.equals(selectedPW) && selectedDept.equals("150")) {
-            System.out.println("관리자로 로그인");
+            //System.out.println("관리자로 로그인");
+            loginState = 1;
+            dialog = (Stage)btn_login.getScene().getWindow();
+            dialog.close();
         } else if (!isADM && loggedPW.equals(selectedPW)) {
-            System.out.println("사용자로 로그인");
+            //System.out.println("사용자로 로그인");
+            loginState = 2;
+            dialog = (Stage)btn_login.getScene().getWindow();
+            dialog.close();
         } else {
-            System.out.println("로그인 실패..");
+            //System.out.println("로그인 실패..");
+            isADM = false;
         }
+
     }
 
     public void handle_hpl_loginPW_find(ActionEvent event) {
@@ -78,6 +89,10 @@ public class LogInController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public int getLoginState() {
+        return this.loginState;
     }
 
 
