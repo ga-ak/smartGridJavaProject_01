@@ -60,11 +60,13 @@ public class LogInController {
         if (isADM && loggedPW.equals(selectedPW) && selectedDept.equals("150")) {
             //System.out.println("관리자로 로그인");
             loginState = 1;
+            LoginInfo.loggedID = loggedID;
             dialog = (Stage)btn_login.getScene().getWindow();
             dialog.close();
         } else if (!isADM && loggedPW.equals(selectedPW)) {
             //System.out.println("사용자로 로그인");
             loginState = 2;
+            LoginInfo.loggedID = loggedID;
             dialog = (Stage)btn_login.getScene().getWindow();
             dialog.close();
         } else {
