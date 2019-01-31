@@ -77,6 +77,7 @@ public class DAO implements DAO_interface {
     @Override
     public void insertBlob(String table, int index, String fileName, String path) {
         try {
+
             File file = new File(path);
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             FileInputStream fis = new FileInputStream(file);
@@ -85,15 +86,21 @@ public class DAO implements DAO_interface {
                 if(x == -1) break;
                 bos.write(x);
             }
-            fis.close();
-            bos.close();
+//            fis.close();
+//            bos.close();
             ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
             connect();
             String sql = "insert into "+table + " (form_id, form_name, form_data) values (?,?,?)";
-            psmt = conn.prepareStatement(sql);
+            final PreparedStatement psmt2 = conn.prepareStatement(sql);
+            //psmt = conn.prepareStatement(sql);
+            final Blob blob = conn.createBlob();
+            final byte[] value = new byte[1024 * 8];
+            try (final OutputStream out = new BufferedOutputStream(blob.setBinaryStream(1L))) {
+                out.write(value);
+            }
             psmt.setInt(1, index);
             psmt.setString(2, fileName);
-            psmt.setBinaryStream(3,bis,bos.size());
+            psmt.setBlob(3,blob);
             close();
         } catch (Exception e) {
             e.printStackTrace();
