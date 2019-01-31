@@ -13,6 +13,8 @@ public interface DAO_interface {
 
     int insertBatch(String table, ArrayList<String> columns, ArrayList<ArrayList<String>> valueArrays);
 
+    void insertBlob(String table, int index, String fileName, String path);
+
     ArrayList<ArrayList<String>> select(String table);
 
     ArrayList<ArrayList<String>> select(String table, ArrayList<String> columns, String limit);

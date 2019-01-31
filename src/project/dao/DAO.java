@@ -1,5 +1,6 @@
 package project.dao;
 
+import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -71,6 +72,32 @@ public class DAO implements DAO_interface {
         }
         close();
         return result;
+    }
+
+    @Override
+    public void insertBlob(String table, int index, String fileName, String path) {
+        try {
+            File file = new File(path);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            FileInputStream fis = new FileInputStream(file);
+            while(true) {
+                int x = fis.read();
+                if(x == -1) break;
+                bos.write(x);
+            }
+            fis.close();
+            bos.close();
+            ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
+            connect();
+            String sql = "insert into "+table + " (form_id, form_name, form_data) values (?,?,?)";
+            psmt = conn.prepareStatement(sql);
+            psmt.setInt(1, index);
+            psmt.setString(2, fileName);
+            psmt.setBinaryStream(3,bis,bos.size());
+            close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
