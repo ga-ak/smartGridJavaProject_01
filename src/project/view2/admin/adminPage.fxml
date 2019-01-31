@@ -33,11 +33,19 @@
                         <Insets left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
                   </Button>
+                  <Button focusTraversable="false" mnemonicParsing="false" prefHeight="70.0" prefWidth="180.0" text="로그아웃">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="350.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
          </left>
          <top>
-            <Label text="관리자단 화면" BorderPane.alignment="CENTER" />
+            <Label text="관리자단 화면" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets top="20.0" />
+               </BorderPane.margin></Label>
          </top>
          <center>
             <StackPane fx:id="stack_admin_inner" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -17,15 +18,21 @@
                      <VBox.margin>
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
                   </Label>
                   <HBox alignment="BOTTOM_LEFT" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="결재권자 선택">
+                        <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="결재권자 선택">
                            <HBox.margin>
-                              <Insets left="30.0" right="30.0" />
+                              <Insets left="60.0" right="30.0" />
                            </HBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
                         </Label>
-                        <ChoiceBox fx:id="cbx_signMaker" minHeight="20.0" prefHeight="20.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="cbx_signMaker" focusTraversable="false" minHeight="20.0" prefHeight="20.0" prefWidth="150.0" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="30.0" />
@@ -33,12 +40,15 @@
                   </HBox>
                   <HBox alignment="BOTTOM_LEFT" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="결재유형 선택">
+                        <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="결재유형 선택">
                            <HBox.margin>
-                              <Insets left="30.0" right="30.0" />
+                              <Insets left="60.0" right="30.0" />
                            </HBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
                         </Label>
-                        <ChoiceBox fx:id="cbx_signKind" minHeight="20.0" prefHeight="20.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="cbx_signKind" focusTraversable="false" minHeight="20.0" prefHeight="20.0" prefWidth="150.0" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="30.0" />
@@ -46,12 +56,15 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" maxHeight="30.0" prefHeight="30.0" prefWidth="1000.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="양식 다운로드">
+                        <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="양식 다운로드">
                            <HBox.margin>
-                              <Insets left="30.0" right="30.0" />
+                              <Insets left="60.0" right="30.0" />
                            </HBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
                         </Label>
-                        <ChoiceBox fx:id="cbx_formDown" minHeight="20.0" prefHeight="20.0" prefWidth="150.0">
+                        <ChoiceBox fx:id="cbx_formDown" focusTraversable="false" minHeight="20.0" prefHeight="20.0" prefWidth="150.0">
                            <HBox.margin>
                               <Insets right="30.0" />
                            </HBox.margin>
@@ -62,14 +75,17 @@
                         <Insets bottom="30.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="200.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="결재내용">
+                        <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="결재내용   " textAlignment="CENTER">
                            <HBox.margin>
-                              <Insets left="30.0" right="30.0" />
+                              <Insets left="60.0" right="45.0" />
                            </HBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
                         </Label>
-                        <TextArea fx:id="txa_signCon" prefHeight="300.0" prefWidth="300.0" />
+                        <TextArea fx:id="txa_signCon" focusTraversable="false" prefHeight="500.0" prefWidth="650.0" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="30.0" />
@@ -79,14 +95,17 @@
             </VBox>
          </center>
          <bottom>
-            <HBox alignment="CENTER_RIGHT" maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_RIGHT" maxHeight="215.0" minHeight="50.0" prefHeight="150.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btn_sign_demand" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="결재 요청">
+                  <Button fx:id="btn_sign_demand" focusTraversable="false" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="결재 요청">
                      <HBox.margin>
-                        <Insets right="30.0" />
+                        <Insets bottom="100.0" right="150.0" />
                      </HBox.margin>
                   </Button>
                </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </HBox>
          </bottom>
       </BorderPane>

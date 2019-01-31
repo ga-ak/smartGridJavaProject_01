@@ -1,42 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <BorderPane prefHeight="800.0" prefWidth="950.0">
          <center>
-            <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <content>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
+            <VBox>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="200.0" prefWidth="200.0">
-                          <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
-                          </columns>
-                        </TableView>
+                        <SplitMenuButton mnemonicParsing="false" text="이름검색">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="부서검색" />
+                            <MenuItem mnemonicParsing="false" text="직급검색" />
+                          </items>
+                        </SplitMenuButton>
+                        <TextField>
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" text="검색" />
                      </children>
-                  </VBox>
-               </content>
-            </ScrollPane>
+                  </HBox>
+                  <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="607.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <content>
+                        <VBox prefHeight="607.0" prefWidth="950.0">
+                           <children>
+                              <TableView focusTraversable="false" prefHeight="607.0" prefWidth="950.0" scaleShape="false">
+                                 <columns>
+                                    <TableColumn prefWidth="150.0" text="프로젝트번호" />
+                                    <TableColumn prefWidth="200.0" text="프로젝트이름" />
+                                    <TableColumn prefWidth="130.0" text="담당자" />
+                                    <TableColumn prefWidth="225.0" text="시작일" />
+                                    <TableColumn prefWidth="225.0" text="종료일" />
+                                 </columns>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
          </center>
          <bottom>
-            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" text="프로젝트 등록" />
-                  <Button mnemonicParsing="false" text="프로젝트 수정" />
-                  <Button mnemonicParsing="false" text="프로젝트 삭제" />
+                  <Button focusTraversable="false" mnemonicParsing="false" text="프로젝트 등록">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="20.0" />
+                     </HBox.margin></Button>
+                  <Button focusTraversable="false" mnemonicParsing="false" text="프로젝트 수정">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="20.0" />
+                     </HBox.margin></Button>
+                  <Button focusTraversable="false" mnemonicParsing="false" text="프로젝트 삭제">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="40.0" />
+                     </HBox.margin></Button>
                </children>
             </HBox>
          </bottom>
          <top>
-            <Label text="프로젝느 목록" BorderPane.alignment="CENTER" />
+            <Label focusTraversable="false" text="프로젝트 목록" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" />
+               </BorderPane.margin></Label>
          </top>
       </BorderPane>
    </children>

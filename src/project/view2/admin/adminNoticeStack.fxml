@@ -1,42 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>
-            <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <content>
-                  <VBox prefHeight="200.0" prefWidth="100.0">
+                  <VBox prefHeight="696.0" prefWidth="950.0">
                      <children>
-                        <TableView prefHeight="200.0" prefWidth="200.0">
+                        <TableView focusTraversable="false" prefHeight="696.0" prefWidth="950.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
+                            <TableColumn prefWidth="100.0" text="번호" />
+                            <TableColumn prefWidth="650.0" text="제목" />
+                              <TableColumn prefWidth="180.0" text="등록일" />
                           </columns>
+                           <VBox.margin>
+                              <Insets right="20.0" />
+                           </VBox.margin>
                         </TableView>
                      </children>
                   </VBox>
                </content>
+               <BorderPane.margin>
+                  <Insets top="20.0" />
+               </BorderPane.margin>
             </ScrollPane>
          </center>
          <bottom>
-            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" text="공지 등록" />
-                  <Button mnemonicParsing="false" text="공지 변경" />
-                  <Button mnemonicParsing="false" text="공지 삭제" />
+                  <Button focusTraversable="false" mnemonicParsing="false" text="공지 등록">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="10.0" />
+                     </HBox.margin></Button>
+                  <Button focusTraversable="false" mnemonicParsing="false" text="공지 변경">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="10.0" />
+                     </HBox.margin></Button>
+                  <Button focusTraversable="false" mnemonicParsing="false" text="공지 삭제">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="40.0" />
+                     </HBox.margin></Button>
                </children>
             </HBox>
          </bottom>
          <top>
-            <Label text="공지 관리" BorderPane.alignment="CENTER" />
+            <Label focusTraversable="false" text="공지 관리" BorderPane.alignment="CENTER" />
          </top>
       </BorderPane>
    </children>
