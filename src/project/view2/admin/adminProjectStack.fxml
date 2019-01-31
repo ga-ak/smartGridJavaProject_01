@@ -33,13 +33,13 @@
                      <content>
                         <VBox prefHeight="607.0" prefWidth="950.0">
                            <children>
-                              <TableView focusTraversable="false" prefHeight="607.0" prefWidth="950.0" scaleShape="false">
+                              <TableView fx:id="tbv_projectTable" focusTraversable="false" prefHeight="607.0" prefWidth="950.0" scaleShape="false">
                                  <columns>
-                                    <TableColumn prefWidth="150.0" text="프로젝트번호" />
-                                    <TableColumn prefWidth="200.0" text="프로젝트이름" />
-                                    <TableColumn prefWidth="130.0" text="담당자" />
-                                    <TableColumn prefWidth="225.0" text="시작일" />
-                                    <TableColumn prefWidth="225.0" text="종료일" />
+                                    <TableColumn fx:id="tbc_projetID" prefWidth="150.0" text="프로젝트번호" />
+                                    <TableColumn fx:id="tbc_projectName" prefWidth="200.0" text="프로젝트이름" />
+                                    <TableColumn fx:id="tbc_projectLeader" prefWidth="130.0" text="담당자" />
+                                    <TableColumn fx:id="tbc_projectStart" prefWidth="225.0" text="시작일" />
+                                    <TableColumn fx:id="tbc_projectEnd" prefWidth="225.0" text="종료일" />
                                  </columns>
                                  <VBox.margin>
                                     <Insets />

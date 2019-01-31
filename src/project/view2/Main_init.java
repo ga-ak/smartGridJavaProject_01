@@ -10,6 +10,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.dao.Controller;
 import project.dao.DAO;
+import project.view2.admin.AdminPage;
 import project.view2.user.UserController;
 import project.view2.user.UserPage;
 
@@ -45,6 +46,12 @@ public class Main_init implements Initializable{
                 System.out.println("관리자로 로그인!");
                 FXMLLoader userLoader = new FXMLLoader(getClass().getResource("admin/adminPage.fxml"));
                 StackPane tempPane = userLoader.load();
+                AdminPage tempController = userLoader.getController();
+
+                // userpage 콘트롤러에 상위 변수 주입
+                tempController.setPrimaryStage(primaryStage);
+                tempController.setMainStack(stack_main);
+                tempController.setLoginPage(loginPage);
                 stack_main.getChildren().add(tempPane);
 
             } else if (loginState == 2) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -11,30 +12,45 @@
    <children>
       <BorderPane prefHeight="800.0" prefWidth="1000.0">
          <top>
-            <Label text="개인 프로젝트" BorderPane.alignment="CENTER" />
+            <Label focusTraversable="false" text="개인 프로젝트" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font></Label>
          </top>
          <bottom>
             <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" text="등록">
+                  <Button focusTraversable="false" mnemonicParsing="false" text="등록">
                      <HBox.margin>
                         <Insets bottom="20.0" right="10.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" text="이름수정">
+                  <Button focusTraversable="false" mnemonicParsing="false" text="이름수정">
                      <HBox.margin>
                         <Insets bottom="20.0" right="10.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" text="시작일 변경">
+                  <Button focusTraversable="false" mnemonicParsing="false" text="시작일 변경">
                      <HBox.margin>
                         <Insets bottom="20.0" right="10.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
                   </Button>
-                  <Button mnemonicParsing="false" text="종료일 변경">
+                  <Button focusTraversable="false" mnemonicParsing="false" text="종료일 변경">
                      <HBox.margin>
                         <Insets bottom="20.0" right="40.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
                   </Button>
                </children></HBox>
          </bottom>
@@ -43,11 +59,26 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1000.0">
                      <children>
-                        <Label alignment="CENTER" prefWidth="300.0" text="프로젝트이름" textOverrun="CLIP" />
-                        <Label alignment="CENTER" prefWidth="110.0" text="프로젝트담당자" />
-                        <Label alignment="CENTER" prefWidth="280.0" text="진척율" />
-                        <Label alignment="CENTER" prefWidth="190.0" text="프로젝트기간" />
-                        <Label alignment="CENTER" prefWidth="100.0" text="프로젝트인원" />
+                        <Label alignment="CENTER" focusTraversable="false" prefWidth="300.0" text="프로젝트이름" textOverrun="CLIP">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Label>
+                        <Label alignment="CENTER" focusTraversable="false" prefWidth="110.0" text="프로젝트담당자">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Label>
+                        <Label alignment="CENTER" focusTraversable="false" prefWidth="280.0" text="진척율">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Label>
+                        <Label alignment="CENTER" focusTraversable="false" prefWidth="190.0" text="프로젝트기간">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Label>
+                        <Label alignment="CENTER" focusTraversable="false" prefWidth="100.0" text="프로젝트인원">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="711.0" prefWidth="200.0">

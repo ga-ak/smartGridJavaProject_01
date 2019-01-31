@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
@@ -11,19 +12,22 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.LogInController">
    <children>
-      <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane prefHeight="27.0" prefWidth="600.0" />
+            <Pane prefHeight="150.0" prefWidth="600.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Pane>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <TextField fx:id="txf_loginID" minWidth="200.0" prefWidth="200.0" promptText="ID">
+                        <TextField fx:id="txf_loginID" focusTraversable="false" minWidth="200.0" prefHeight="35.0" prefWidth="200.0" promptText="ID">
                            <VBox.margin>
                               <Insets bottom="15.0" />
                            </VBox.margin>
                         </TextField>
-                        <PasswordField fx:id="txf_loginPW" minWidth="200.0" prefWidth="200.0" promptText="PASSWORD">
+                        <PasswordField fx:id="txf_loginPW" focusTraversable="false" minWidth="200.0" prefHeight="35.0" prefWidth="200.0" promptText="PASSWORD">
                            <VBox.margin>
                               <Insets top="15.0" />
                            </VBox.margin>
@@ -45,12 +49,12 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
                <children>
-                  <CheckBox fx:id="chb_loginADM" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="관리자로 로그인">
+                  <CheckBox fx:id="chb_loginADM" focusTraversable="false" minHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="관리자로 로그인">
                      <font>
                         <Font size="14.0" />
                      </font>
                      <HBox.margin>
-                        <Insets right="15.0" />
+                        <Insets right="20.0" />
                      </HBox.margin>
                   </CheckBox>
                   <Hyperlink fx:id="hpl_loginPW_find" focusTraversable="false" maxHeight="25.0" minHeight="20.0" text="비밀번호가 기억나지 않습니까?" underline="true" visited="true">
@@ -60,10 +64,14 @@
                   </Hyperlink>
                </children>
                <VBox.margin>
-                  <Insets />
+                  <Insets top="15.0" />
                </VBox.margin>
             </HBox>
          </children>
       </VBox>
+      <Label focusTraversable="false" text="Cheese Login" AnchorPane.leftAnchor="175.0" AnchorPane.topAnchor="60.0">
+         <font>
+            <Font name="HYPMokGak-Bold" size="34.0" />
+         </font></Label>
    </children>
 </AnchorPane>
