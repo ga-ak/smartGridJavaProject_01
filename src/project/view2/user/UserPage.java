@@ -10,6 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.view2.LogInController;
+import project.view2.admin.AdminPage;
 
 import java.io.IOException;
 
@@ -104,7 +105,11 @@ public class UserPage {
                 System.out.println("관리자로 로그인!");
                 FXMLLoader userLoader = new FXMLLoader(getClass().getResource("../admin/adminPage.fxml"));
                 StackPane tempPane = userLoader.load();
+                AdminPage tempController = userLoader.getController();
                 stack_main.getChildren().add(tempPane);
+                tempController.setPrimaryStage(primaryStage);
+                tempController.setMainStack(stack_main);
+                tempController.setLoginPage(loginPage);
 
             } else if (loginState == 2) {
                 System.out.println("사용자로 로그인!");

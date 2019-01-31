@@ -24,7 +24,7 @@
                   </Label>
                   <HBox alignment="BOTTOM_LEFT" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="결재권자 선택">
+                        <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="30.0" text="결재권자 선택">
                            <HBox.margin>
                               <Insets left="60.0" right="30.0" />
                            </HBox.margin>
@@ -40,7 +40,7 @@
                   </HBox>
                   <HBox alignment="BOTTOM_LEFT" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="결재유형 선택">
+                        <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="30.0" text="결재유형 선택">
                            <HBox.margin>
                               <Insets left="60.0" right="30.0" />
                            </HBox.margin>
@@ -56,7 +56,7 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" maxHeight="30.0" prefHeight="30.0" prefWidth="1000.0">
                      <children>
-                        <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="양식 다운로드">
+                        <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="30.0" text="양식 다운로드">
                            <HBox.margin>
                               <Insets left="60.0" right="30.0" />
                            </HBox.margin>
@@ -87,7 +87,10 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="txa_signCon" focusTraversable="false" prefHeight="500.0" prefWidth="650.0" />
+                        <TextArea fx:id="txa_signCon" focusTraversable="false" prefHeight="500.0" prefWidth="650.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font></TextArea>
                      </children>
                      <VBox.margin>
                         <Insets bottom="30.0" />

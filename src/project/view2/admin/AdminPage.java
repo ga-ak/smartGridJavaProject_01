@@ -46,7 +46,7 @@ public class AdminPage implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         adminInfoLoader = new FXMLLoader(getClass().getResource("adminInfoStack.fxml"));
         adminProjectLoader = new FXMLLoader(getClass().getResource("adminProjectStack.fxml"));
-        adminNoticeLoader = new FXMLLoader(getClass().getResource("adminNoticeStack.fxml"));
+        adminNoticeLoader = new FXMLLoader(getClass().getResource("adminAnnounceStack.fxml"));
 
         try {
             stack_adminInfo = adminInfoLoader.load();

@@ -17,6 +17,7 @@ public class ProjectTable {
     private StringProperty endDate;
 
     public ProjectTable(ArrayList<String> inputArrayList) {
+
         ArrayList<String> columns = new ArrayList<>();
         columns.add("employee_name");
 

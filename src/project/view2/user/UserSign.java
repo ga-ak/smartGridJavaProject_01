@@ -73,7 +73,6 @@ public class UserSign implements Initializable {
         formKindList.add("조퇴 신청서 양식");
         formKindList.add("자격증 수당 양식");
 
-
         // 체크박스에 삽입
         cbx_signMaker.setItems(signMakerList);
         cbx_signKind.setItems(signKindList);
