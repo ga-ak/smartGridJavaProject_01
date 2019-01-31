@@ -6,39 +6,36 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<HBox fx:id="hbox_works" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserController">
-    <children>
-        <Label fx:id="lbl_workBigSub" alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="대주제이름">
-            <HBox.margin>
-                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-            </HBox.margin>
-        </Label>
-        <Label fx:id="lbl_workSmallSub" alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="소주제 이름">
-            <HBox.margin>
-                <Insets bottom="10.0" right="10.0" top="10.0" />
-            </HBox.margin>
-        </Label>
-        <Label fx:id="lbl_workSmallExp" alignment="CENTER" prefHeight="50.0" prefWidth="275.0" text="소주제 설명">
-            <HBox.margin>
-                <Insets bottom="10.0" right="10.0" top="10.0" />
-            </HBox.margin>
-        </Label>
-        <Label fx:id="lbl_workSmallPeriod" alignment="CENTER" prefHeight="50.0" prefWidth="275.0" text="소주제 기간">
-            <HBox.margin>
-                <Insets bottom="10.0" right="10.0" top="10.0" />
-            </HBox.margin>
-        </Label>
-      <Label fx:id="lbl_workState" alignment="CENTER" prefHeight="50.0" prefWidth="75.0" text="상태">
+<HBox fx:id="hbox_projects" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="lbl_projectName" alignment="CENTER" prefHeight="50.0" prefWidth="300.0" text="프로젝트 이름">
          <HBox.margin>
-            <Insets bottom="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" top="10.0" />
          </HBox.margin>
       </Label>
-      <Button fx:id="btn_work_submit" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="제출">
+      <Label fx:id="lbl_projectLeader" alignment="CENTER" prefHeight="50.0" prefWidth="110.0" text="프로젝트 담당자">
          <HBox.margin>
-            <Insets bottom="10.0" right="10.0" top="10.0" />
+            <Insets bottom="10.0" top="10.0" />
          </HBox.margin>
-      </Button>
-    </children>
+      </Label>
+      <ProgressBar fx:id="pgb_projectPG" prefHeight="50.0" prefWidth="240.0" progress="0.0">
+         <HBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </HBox.margin>
+      </ProgressBar>
+      <Label fx:id="lbl_projectPeriod" alignment="CENTER" prefHeight="50.0" prefWidth="190.0" text="프로젝트 기간">
+         <HBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="lbl_projectNumber" alignment="CENTER" prefHeight="50.0" prefWidth="100.0" text="프로젝트 인원">
+         <HBox.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </HBox.margin>
+      </Label>
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
 </HBox>

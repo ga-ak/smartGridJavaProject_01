@@ -27,16 +27,16 @@
                                     <Insets />
                                  </VBox.margin>
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="이름 : ">
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="이름 : ">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="20.0" top="10.0" />
                                        </HBox.margin></Label>
-                                    <Label fx:id="lbl_userName" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Label">
+                                    <Label fx:id="lbl_userName" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="10.0" top="10.0" />
@@ -45,122 +45,128 @@
                               </HBox>
                               <HBox prefHeight="30.0" prefWidth="200.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="사원번호 : ">
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="사원번호 : ">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="20.0" top="10.0" />
                                        </HBox.margin></Label>
-                                    <Label fx:id="lbl_userId" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Label">
+                                    <Label fx:id="lbl_userId" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="10.0" top="10.0" />
                                        </HBox.margin></Label>
                                  </children>
                                  <VBox.margin>
-                                    <Insets top="30.0" />
+                                    <Insets top="20.0" />
                                  </VBox.margin>
                               </HBox>
                               <HBox prefHeight="30.0" prefWidth="200.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="부서 : ">
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="부서 : ">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="20.0" top="10.0" />
                                        </HBox.margin></Label>
-                                    <Label fx:id="lbl_userDept" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Label">
+                                    <Label fx:id="lbl_userDept" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="10.0" top="10.0" />
                                        </HBox.margin></Label>
                                  </children>
                                  <VBox.margin>
-                                    <Insets top="30.0" />
+                                    <Insets top="20.0" />
                                  </VBox.margin>
                               </HBox>
                               <HBox prefHeight="30.0" prefWidth="200.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="직급 : ">
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="직급 : ">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="20.0" top="10.0" />
                                        </HBox.margin></Label>
-                                    <Label fx:id="lbl_userJG" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Label">
+                                    <Label fx:id="lbl_userJG" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="10.0" top="10.0" />
                                        </HBox.margin></Label>
                                  </children>
                                  <VBox.margin>
-                                    <Insets top="30.0" />
+                                    <Insets top="20.0" />
                                  </VBox.margin>
                               </HBox>
                               <HBox prefHeight="30.0" prefWidth="200.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="입사일 : ">
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="입사일 : ">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="20.0" top="10.0" />
                                        </HBox.margin></Label>
-                                    <Label fx:id="lbl_userHD" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" text="Label">
+                                    <Label fx:id="lbl_userHD" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="10.0" top="10.0" />
                                        </HBox.margin></Label>
                                  </children>
                                  <VBox.margin>
-                                    <Insets top="30.0" />
+                                    <Insets top="20.0" />
                                  </VBox.margin>
                               </HBox>
                               <HBox prefHeight="30.0" prefWidth="200.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="주소 : ">
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="주소 : ">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="20.0" top="10.0" />
                                        </HBox.margin></Label>
-                                    <TextField fx:id="txf_userADD" alignment="TOP_LEFT" maxHeight="25.0" minHeight="20.0" prefHeight="20.0">
+                                    <TextField fx:id="txf_userADD" alignment="TOP_LEFT" maxHeight="40.0" minHeight="30.0" prefHeight="40.0" prefWidth="200.0">
                                        <HBox.margin>
                                           <Insets left="10.0" top="10.0" />
-                                       </HBox.margin></TextField>
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></TextField>
                                  </children>
                                  <VBox.margin>
-                                    <Insets top="30.0" />
+                                    <Insets top="20.0" />
                                  </VBox.margin>
                               </HBox>
                               <HBox prefHeight="30.0" prefWidth="200.0">
                                  <children>
-                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" prefWidth="100.0" text="연락처 : ">
+                                    <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="연락처 : ">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font size="13.0" />
                                        </font>
                                        <HBox.margin>
                                           <Insets left="20.0" top="10.0" />
                                        </HBox.margin></Label>
-                                    <TextField fx:id="txf_userCon" maxHeight="25.0" minHeight="20.0" prefHeight="20.0">
+                                    <TextField fx:id="txf_userCon" maxHeight="25.0" minHeight="30.0" prefHeight="25.0" prefWidth="200.0">
                                        <HBox.margin>
                                           <Insets left="10.0" top="10.0" />
-                                       </HBox.margin></TextField>
+                                       </HBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font></TextField>
                                  </children>
                                  <VBox.margin>
-                                    <Insets top="30.0" />
+                                    <Insets top="20.0" />
                                  </VBox.margin>
                               </HBox>
                            </children>

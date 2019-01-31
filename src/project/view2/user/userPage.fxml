@@ -16,7 +16,7 @@
                <children>
                   <Button fx:id="btn_userInfo" focusTraversable="false" mnemonicParsing="false" prefHeight="70.0" prefWidth="180.0" text="내 정보 보기">
                      <VBox.margin>
-                        <Insets left="10.0" right="10.0" />
+                        <Insets left="10.0" right="10.0" top="15.0" />
                      </VBox.margin>
                   </Button>
                   <Button fx:id="btn_userProject" focusTraversable="false" mnemonicParsing="false" prefHeight="70.0" prefWidth="180.0" text="내 프로젝트 보기">
@@ -47,9 +47,6 @@
                </children>
             </VBox>
          </left>
-         <top>
-            <Label text="사용자단 화면" BorderPane.alignment="CENTER" />
-         </top>
          <center>
             <StackPane fx:id="stack_user_inner" prefHeight="750.0" prefWidth="950.0" BorderPane.alignment="CENTER" />
          </center>

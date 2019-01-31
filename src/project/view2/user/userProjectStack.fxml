@@ -1,18 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <StackPane fx:id="stack_userProject" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserProject">
    <children>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0">
-         <content>
-            <VBox fx:id="vbox_project" prefHeight="800.0" prefWidth="1000.0" />
-         </content>
-      </ScrollPane>
+      <BorderPane prefHeight="800.0" prefWidth="1000.0">
+         <top>
+            <Label text="개인 프로젝트" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" text="등록">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="이름수정">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="시작일 변경">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" text="종료일 변경">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="40.0" />
+                     </HBox.margin>
+                  </Button>
+               </children></HBox>
+         </bottom>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1000.0">
+                     <children>
+                        <Label alignment="CENTER" prefWidth="300.0" text="프로젝트이름" textOverrun="CLIP" />
+                        <Label alignment="CENTER" prefWidth="110.0" text="프로젝트담당자" />
+                        <Label alignment="CENTER" prefWidth="280.0" text="진척율" />
+                        <Label alignment="CENTER" prefWidth="190.0" text="프로젝트기간" />
+                        <Label alignment="CENTER" prefWidth="100.0" text="프로젝트인원" />
+                     </children>
+                  </HBox>
+                  <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="711.0" prefWidth="200.0">
+                     <content>
+                        <VBox fx:id="vbox_project" prefHeight="711.0" prefWidth="1000.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
    </children>
 </StackPane>

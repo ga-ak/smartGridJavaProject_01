@@ -19,7 +19,7 @@
                         <Insets bottom="20.0" top="20.0" />
                      </VBox.margin>
                      <font>
-                        <Font size="18.0" />
+                        <Font size="13.0" />
                      </font>
                   </Label>
                   <HBox alignment="BOTTOM_LEFT" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0">
@@ -29,7 +29,7 @@
                               <Insets left="60.0" right="30.0" />
                            </HBox.margin>
                            <font>
-                              <Font size="18.0" />
+                              <Font size="13.0" />
                            </font>
                         </Label>
                         <ComboBox fx:id="cbx_signMaker" prefHeight="30.0" prefWidth="150.0" />
@@ -45,7 +45,7 @@
                               <Insets left="60.0" right="30.0" />
                            </HBox.margin>
                            <font>
-                              <Font size="18.0" />
+                              <Font size="13.0" />
                            </font>
                         </Label>
                         <ComboBox fx:id="cbx_signKind" prefHeight="30.0" prefWidth="150.0" />
@@ -61,14 +61,17 @@
                               <Insets left="60.0" right="30.0" />
                            </HBox.margin>
                            <font>
-                              <Font size="18.0" />
+                              <Font size="13.0" />
                            </font>
                         </Label>
                         <ComboBox fx:id="cbx_formDown" prefHeight="30.0" prefWidth="150.0" />
                         <Button fx:id="btn_formDown" alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="다운로드">
                            <HBox.margin>
                               <Insets left="20.0" />
-                           </HBox.margin></Button>
+                           </HBox.margin>
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
                      </children>
                      <VBox.margin>
                         <Insets bottom="30.0" />
@@ -78,10 +81,10 @@
                      <children>
                         <Label alignment="CENTER_RIGHT" focusTraversable="false" minHeight="20.0" minWidth="100.0" prefHeight="20.0" text="결재내용   " textAlignment="CENTER">
                            <HBox.margin>
-                              <Insets left="60.0" right="45.0" />
+                              <Insets left="60.0" right="30.0" />
                            </HBox.margin>
                            <font>
-                              <Font size="18.0" />
+                              <Font size="13.0" />
                            </font>
                         </Label>
                         <TextArea fx:id="txa_signCon" focusTraversable="false" prefHeight="500.0" prefWidth="650.0" />
@@ -98,8 +101,11 @@
                <children>
                   <Button fx:id="btn_sign_demand" focusTraversable="false" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="결재 요청">
                      <HBox.margin>
-                        <Insets bottom="100.0" right="150.0" />
+                        <Insets bottom="100.0" right="160.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
                   </Button>
                </children>
                <opaqueInsets>
