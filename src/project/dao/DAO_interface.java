@@ -1,5 +1,7 @@
 package project.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
@@ -20,5 +22,8 @@ public interface DAO_interface {
     int delete(String table, String limit);
 
     void close();
+
+    Connection getConnect();
+    PreparedStatement getPsmt();
 
 }

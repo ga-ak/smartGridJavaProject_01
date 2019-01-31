@@ -1,6 +1,7 @@
 package project.view2;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import project.dao.DAO;
 import project.view2.DAOContainer;
 
@@ -22,6 +24,7 @@ public class LogInController {
     boolean isADM;
     int loginState;
     Stage dialog;
+    Stage primaryStage;
 
     @FXML private TextField txf_loginID;
     @FXML private TextField txf_loginPW;
@@ -37,9 +40,12 @@ public class LogInController {
         columns = new ArrayList<>();
         columns.add("password");
         columns.add("department_id");
+        columns.add("jobgrade_id");
+
 
         btn_login.setOnAction(event -> handle_btn_login(event));
         hpl_loginPW_find.setOnAction(event -> handle_hpl_loginPW_find(event));
+
     }
 
     public void handle_btn_login(ActionEvent event) {
@@ -61,12 +67,16 @@ public class LogInController {
             //System.out.println("관리자로 로그인");
             loginState = 1;
             LoginInfo.loggedID = loggedID;
+            LoginInfo.loggedDeptID = tempResult.get(0).get(1);
+            LoginInfo.loggedJGID = tempResult.get(0).get(2);
             dialog = (Stage)btn_login.getScene().getWindow();
             dialog.close();
         } else if (!isADM && loggedPW.equals(selectedPW)) {
             //System.out.println("사용자로 로그인");
             loginState = 2;
             LoginInfo.loggedID = loggedID;
+            LoginInfo.loggedDeptID = tempResult.get(0).get(1);
+            LoginInfo.loggedJGID = tempResult.get(0).get(2);
             dialog = (Stage)btn_login.getScene().getWindow();
             dialog.close();
         } else {
@@ -96,6 +106,11 @@ public class LogInController {
     public int getLoginState() {
         return this.loginState;
     }
+
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+    }
+
 
 
 }

@@ -263,4 +263,14 @@ public class DAO implements DAO_interface {
             result.add(temp);
         }
     }
+
+    @Override
+    public Connection getConnect() {
+        return conn;
+    }
+
+    @Override
+    public PreparedStatement getPsmt() {
+        return psmt;
+    }
 }

@@ -21,10 +21,10 @@ public class Main_init implements Initializable{
 
     DAO dao;
 
-    @FXML  StackPane stack_main;
+    @FXML StackPane stack_main;
     AnchorPane loginPage;
     Stage primaryStage;
-    int loginState;
+    public int loginState;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -32,6 +32,7 @@ public class Main_init implements Initializable{
             FXMLLoader loginLoader= new FXMLLoader(getClass().getResource("loginPage.fxml"));
             loginPage = loginLoader.load();
             LogInController logInController = loginLoader.getController();
+            logInController.setPrimaryStage(primaryStage);
             Stage dialogStage = new Stage();
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
@@ -43,15 +44,23 @@ public class Main_init implements Initializable{
             if (loginState == 1) {
                 System.out.println("관리자로 로그인!");
                 FXMLLoader userLoader = new FXMLLoader(getClass().getResource("admin/adminPage.fxml"));
-                StackPane testPane = userLoader.load();
-                stack_main.getChildren().add(testPane);
+                StackPane tempPane = userLoader.load();
+                stack_main.getChildren().add(tempPane);
 
             } else if (loginState == 2) {
                 System.out.println("사용자로 로그인!");
                 FXMLLoader userLoader = new FXMLLoader(getClass().getResource("user/userPage.fxml"));
-                StackPane testPane = userLoader.load();
-                //UserController userController = userLoader.getController();
-                stack_main.getChildren().add(testPane);
+                StackPane tempPane = userLoader.load();
+                UserPage tempController = userLoader.getController();
+
+                // userpage 콘트롤러에 상위 변수 주입
+                tempController.setPrimaryStage(primaryStage);
+                tempController.setMainStack(stack_main);
+                tempController.setLoginPage(loginPage);
+
+
+                stack_main.getChildren().add(tempPane);
+
 
             } else {
                 System.out.println("로그인 취소...");

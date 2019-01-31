@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane fx:id="stack_userSign" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserController">
+<StackPane fx:id="stack_userSign" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserSign">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>
@@ -32,7 +32,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="cbx_signMaker" focusTraversable="false" minHeight="20.0" prefHeight="20.0" prefWidth="150.0" />
+                        <ComboBox fx:id="cbx_signMaker" prefHeight="30.0" prefWidth="150.0" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="30.0" />
@@ -48,7 +48,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="cbx_signKind" focusTraversable="false" minHeight="20.0" prefHeight="20.0" prefWidth="150.0" />
+                        <ComboBox fx:id="cbx_signKind" prefHeight="30.0" prefWidth="150.0" />
                      </children>
                      <VBox.margin>
                         <Insets bottom="30.0" />
@@ -64,12 +64,11 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ChoiceBox fx:id="cbx_formDown" focusTraversable="false" minHeight="20.0" prefHeight="20.0" prefWidth="150.0">
+                        <ComboBox fx:id="cbx_formDown" prefHeight="30.0" prefWidth="150.0" />
+                        <Button fx:id="btn_formDown" alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="다운로드">
                            <HBox.margin>
-                              <Insets right="30.0" />
-                           </HBox.margin>
-                        </ChoiceBox>
-                        <Button fx:id="btn_formDown" alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="다운로드" />
+                              <Insets left="20.0" />
+                           </HBox.margin></Button>
                      </children>
                      <VBox.margin>
                         <Insets bottom="30.0" />
