@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane fx:id="stack_userInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="783.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserInfo">
+<StackPane fx:id="stack_userInfo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserInfo">
     <children>
         <TabPane focusTraversable="false" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
             <tabs>
@@ -16,174 +16,277 @@
                     <content>
                         <BorderPane prefHeight="200.0" prefWidth="200.0">
                             <center>
-                                <VBox alignment="TOP_CENTER" prefHeight="767.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                                <VBox prefHeight="767.0" prefWidth="1000.0" BorderPane.alignment="TOP_LEFT">
                                     <children>
-                                        <Label alignment="CENTER" minHeight="17.0" prefHeight="17.0" text="사원정보 조회 및 수정">
-                                            <VBox.margin>
-                                                <Insets bottom="20.0" top="20.0" />
-                                            </VBox.margin></Label>
                                         <HBox prefHeight="30.0" prefWidth="200.0">
+                                            <VBox.margin>
+                                                <Insets top="60.0" />
+                                            </VBox.margin>
+                                            <children>
+                                    <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
+                                       <children>
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" text="이름 : ">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                                      <Label fx:id="lbl_userName" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                            </children>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" prefWidth="200.0">
+                                            <children>
+                                    <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
+                                       <children>
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" text="사원번호 : ">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                                      <Label fx:id="lbl_userId" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" prefWidth="200.0">
+                                            <children>
+                                    <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
+                                       <children>
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" text="부서 : ">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                                      <Label fx:id="lbl_userDept" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" prefWidth="200.0">
+                                            <children>
+                                    <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
+                                       <children>
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" text="직급 : ">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                                      <Label fx:id="lbl_userJG" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" prefWidth="200.0">
+                                            <children>
+                                    <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
+                                       <children>
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" text="입사일 : ">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                                      <Label fx:id="lbl_userHD" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" prefWidth="200.0">
+                                            <children>
+                                    <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
+                                       <children>
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="200.0" text="주소 : ">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                                      <TextField fx:id="txf_userADD" alignment="TOP_LEFT" focusTraversable="false" maxHeight="40.0" minHeight="30.0" prefHeight="40.0" prefWidth="200.0">
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                        <HBox prefHeight="30.0" prefWidth="200.0">
+                                            <children>
+                                    <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
+                                       <children>
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="200.0" text="연락처 : ">
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                          </Label>
+                                                      <TextField fx:id="txf_userCon" focusTraversable="false" maxHeight="25.0" minHeight="30.0" prefHeight="25.0" prefWidth="200.0">
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                                          <font>
+                                                              <Font size="13.0" />
+                                                          </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                            </children>
+                                            <VBox.margin>
+                                                <Insets top="30.0" />
+                                            </VBox.margin>
+                                        </HBox>
+                                      <HBox alignment="CENTER_LEFT" maxWidth="500.0" prefHeight="40.0" prefWidth="300.0">
+                                          <children>
+                                              <Button fx:id="btn_userPW_change" focusTraversable="false" mnemonicParsing="false" text="비밀번호 변경">
+                                                  <HBox.margin>
+                                                      <Insets left="230.0" />
+                                                  </HBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                              </Button>
+                                              <Button fx:id="btn_userInfo_save" focusTraversable="false" mnemonicParsing="false" text="저장">
+                                                  <HBox.margin>
+                                                      <Insets left="25.0" />
+                                                  </HBox.margin>
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                              </Button>
+                                          </children>
+                                 <VBox.margin>
+                                    <Insets top="50.0" />
+                                 </VBox.margin>
+                                      </HBox>
+                                    </children>
+                                </VBox>
+                            </center>
+                        </BorderPane>
+                    </content>
+                </Tab>
+                <Tab closable="false" text="근무 이력">
+                    <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                            <center>
+                                <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                                    <children>
+                                                        <DatePicker fx:id="dp_userWork_start" focusTraversable="false" minHeight="20.0" minWidth="180.0" prefHeight="30.0" prefWidth="150.0" promptText="시작일" showWeekNumbers="true">
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0" />
+                                                            </VBox.margin>
+                                                        </DatePicker>
+                                                        <DatePicker fx:id="dp_userWork_end" focusTraversable="false" minHeight="20.0" minWidth="180.0" prefHeight="30.0" prefWidth="150.0" promptText="마지막일" showWeekNumbers="true" />
+                                                    </children>
+                                                </VBox>
+                                                <Button fx:id="btn_userWork_search" focusTraversable="false" minWidth="100.0" mnemonicParsing="false" prefHeight="70.0" text="근무이력 검색">
+                                                    <HBox.margin>
+                                                        <Insets left="20.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
                                             <VBox.margin>
                                                 <Insets />
                                             </VBox.margin>
-                                            <children>
-                                                <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="이름 : ">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="20.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                                <Label fx:id="lbl_userName" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="10.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                            </children>
                                         </HBox>
-                                        <HBox prefHeight="30.0" prefWidth="200.0">
-                                            <children>
-                                                <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="사원번호 : ">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="20.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                                <Label fx:id="lbl_userId" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="10.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                            </children>
-                                            <VBox.margin>
-                                                <Insets top="20.0" />
-                                            </VBox.margin>
-                                        </HBox>
-                                        <HBox prefHeight="30.0" prefWidth="200.0">
-                                            <children>
-                                                <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="부서 : ">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="20.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                                <Label fx:id="lbl_userDept" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="10.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                            </children>
-                                            <VBox.margin>
-                                                <Insets top="20.0" />
-                                            </VBox.margin>
-                                        </HBox>
-                                        <HBox prefHeight="30.0" prefWidth="200.0">
-                                            <children>
-                                                <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="직급 : ">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="20.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                                <Label fx:id="lbl_userJG" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="10.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                            </children>
-                                            <VBox.margin>
-                                                <Insets top="20.0" />
-                                            </VBox.margin>
-                                        </HBox>
-                                        <HBox prefHeight="30.0" prefWidth="200.0">
-                                            <children>
-                                                <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="입사일 : ">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="20.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                                <Label fx:id="lbl_userHD" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" text="Label">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="10.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                            </children>
-                                            <VBox.margin>
-                                                <Insets top="20.0" />
-                                            </VBox.margin>
-                                        </HBox>
-                                        <HBox prefHeight="30.0" prefWidth="200.0">
-                                            <children>
-                                                <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="주소 : ">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="20.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                                <TextField fx:id="txf_userADD" alignment="TOP_LEFT" maxHeight="40.0" minHeight="30.0" prefHeight="40.0" prefWidth="200.0">
-                                                    <HBox.margin>
-                                                        <Insets left="10.0" top="10.0" />
-                                                    </HBox.margin>
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font></TextField>
-                                            </children>
-                                            <VBox.margin>
-                                                <Insets top="20.0" />
-                                            </VBox.margin>
-                                        </HBox>
-                                        <HBox prefHeight="30.0" prefWidth="200.0">
-                                            <children>
-                                                <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="100.0" text="연락처 : ">
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font>
-                                                    <HBox.margin>
-                                                        <Insets left="20.0" top="10.0" />
-                                                    </HBox.margin></Label>
-                                                <TextField fx:id="txf_userCon" maxHeight="25.0" minHeight="30.0" prefHeight="25.0" prefWidth="200.0">
-                                                    <HBox.margin>
-                                                        <Insets left="10.0" top="10.0" />
-                                                    </HBox.margin>
-                                                    <font>
-                                                        <Font size="13.0" />
-                                                    </font></TextField>
-                                            </children>
-                                            <VBox.margin>
-                                                <Insets top="20.0" />
-                                            </VBox.margin>
-                                        </HBox>
+                              <ScrollPane prefHeight="563.0" prefWidth="1059.0">
+                                 <content>
+                                              <TableView fx:id="tbv_userWorkTable" focusTraversable="false" prefHeight="560.0" prefWidth="988.0">
+                                                  <columns>
+                                                      <TableColumn prefWidth="75.0" text="C1" />
+                                                      <TableColumn prefWidth="75.0" text="C2" />
+                                                  </columns>
+                                              </TableView>
+                                 </content>
+                              </ScrollPane>
                                     </children>
                                 </VBox>
                             </center>
                             <bottom>
-                                <HBox alignment="CENTER" prefHeight="200.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                                <HBox alignment="CENTER_RIGHT" minHeight="50.0" prefHeight="70.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                                     <children>
-                                        <Button fx:id="btn_userPW_change" mnemonicParsing="false" text="비밀번호 변경">
+                                        <Button fx:id="btn_userWork_excel" focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="엑셀 내보내기">
                                             <HBox.margin>
-                                                <Insets bottom="100.0" right="30.0" />
+                                                <Insets bottom="20.0" right="20.0" />
                                             </HBox.margin>
-                                        </Button>
-                                        <Button fx:id="btn_userInfo_save" mnemonicParsing="false" text="저장">
-                                            <HBox.margin>
-                                                <Insets bottom="100.0" right="30.0" />
-                                            </HBox.margin>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
                                         </Button>
                                     </children>
                                 </HBox>
@@ -191,51 +294,41 @@
                         </BorderPane>
                     </content>
                 </Tab>
-                <Tab text="근무 이력">
+                <Tab closable="false" text="추가 수당">
                     <content>
                         <BorderPane prefHeight="200.0" prefWidth="200.0">
                             <center>
                                 <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                                     <children>
-                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                        <HBox alignment="CENTER" minHeight="100.0" prefHeight="100.0" prefWidth="200.0">
                                             <children>
                                                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                                                     <children>
-                                                        <Label minHeight="20.0" text="검색 시작일">
+                                                        <DatePicker fx:id="dp_userEPay_start" focusTraversable="false" maxHeight="30.0" minHeight="30.0" minWidth="180.0" prefHeight="30.0" prefWidth="180.0" promptText="시작일" showWeekNumbers="true">
                                                             <VBox.margin>
-                                                                <Insets bottom="30.0" />
-                                                            </VBox.margin>
-                                                        </Label>
-                                                        <Label minWidth="20.0" text="검색 종료일" />
-                                                    </children>
-                                                </VBox>
-                                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                                                    <children>
-                                                        <DatePicker fx:id="dp_userWork_start" minHeight="20.0" minWidth="150.0" prefHeight="20.0" prefWidth="150.0">
-                                                            <VBox.margin>
-                                                                <Insets bottom="30.0" />
+                                                                <Insets bottom="10.0" />
                                                             </VBox.margin>
                                                         </DatePicker>
-                                                        <DatePicker fx:id="dp_userWork_end" minHeight="20.0" minWidth="150.0" prefHeight="20.0" prefWidth="150.0" />
+                                                        <DatePicker fx:id="dp_userEPay_end" focusTraversable="false" maxHeight="30.0" minHeight="30.0" minWidth="180.0" prefHeight="30.0" prefWidth="180.0" promptText="마지막일" showWeekNumbers="true" />
                                                     </children>
                                                 </VBox>
-                                                <Button fx:id="btn_userWork_search" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" text="검색">
+                                                <Button fx:id="btn_userEPay_search" focusTraversable="false" minWidth="100.0" mnemonicParsing="false" prefHeight="70.0" text="추가수당 검색">
                                                     <HBox.margin>
-                                                        <Insets left="30.0" />
+                                                        <Insets left="20.0" />
                                                     </HBox.margin>
                                                 </Button>
                                             </children>
                                             <VBox.margin>
-                                                <Insets top="30.0" />
+                                                <Insets />
                                             </VBox.margin>
                                         </HBox>
-                                        <TableView fx:id="tbv_userWorkTable" prefHeight="587.0" prefWidth="940.0">
+                                        <TableView fx:id="tbv_userEPayTable" focusTraversable="false" prefHeight="587.0" prefWidth="940.0">
                                             <columns>
                                                 <TableColumn prefWidth="75.0" text="C1" />
                                                 <TableColumn prefWidth="75.0" text="C2" />
                                             </columns>
                                             <VBox.margin>
-                                                <Insets left="30.0" right="30.0" top="30.0" />
+                                                <Insets />
                                             </VBox.margin>
                                         </TableView>
                                     </children>
@@ -244,7 +337,7 @@
                             <bottom>
                                 <HBox alignment="CENTER_RIGHT" minHeight="50.0" prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                                     <children>
-                                        <Button fx:id="btn_userWork_excel" mnemonicParsing="false" text="엑셀 내보내기">
+                                        <Button fx:id="btn_userEPay_excel" focusTraversable="false" mnemonicParsing="false" text="엑셀 내보내기">
                                             <HBox.margin>
                                                 <Insets right="30.0" />
                                             </HBox.margin>
@@ -252,88 +345,16 @@
                                     </children>
                                 </HBox>
                             </bottom>
-                            <top>
-                                <Label text="근무 이력 조회" BorderPane.alignment="CENTER">
-                                    <padding>
-                                        <Insets top="20.0" />
-                                    </padding>
-                                </Label>
-                            </top>
-                        </BorderPane>
-                    </content>
-                </Tab>
-                <Tab text="추가 수당">
-                    <content>
-                        <BorderPane prefHeight="200.0" prefWidth="200.0">
-                            <center>
-                                <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-                                    <children>
-                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                                            <children>
-                                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                                                    <children>
-                                                        <Label minHeight="20.0" text="검색 시작일">
-                                                            <VBox.margin>
-                                                                <Insets bottom="30.0" />
-                                                            </VBox.margin>
-                                                        </Label>
-                                                        <Label minWidth="20.0" text="검색 종료일" />
-                                                    </children>
-                                                </VBox>
-                                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                                                    <children>
-                                                        <DatePicker fx:id="dp_userEPay_start" minHeight="20.0" minWidth="150.0" prefHeight="20.0" prefWidth="150.0">
-                                                            <VBox.margin>
-                                                                <Insets bottom="30.0" />
-                                                            </VBox.margin>
-                                                        </DatePicker>
-                                                        <DatePicker fx:id="dp_userEPay_end" minHeight="20.0" minWidth="150.0" prefHeight="20.0" prefWidth="150.0" />
-                                                    </children>
-                                                </VBox>
-                                                <Button fx:id="btn_userEPay_search" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" text="검색">
-                                                    <HBox.margin>
-                                                        <Insets left="30.0" />
-                                                    </HBox.margin>
-                                                </Button>
-                                            </children>
-                                            <VBox.margin>
-                                                <Insets top="30.0" />
-                                            </VBox.margin>
-                                        </HBox>
-                                        <TableView fx:id="tbv_userEPayTable" prefHeight="587.0" prefWidth="940.0">
-                                            <columns>
-                                                <TableColumn prefWidth="75.0" text="C1" />
-                                                <TableColumn prefWidth="75.0" text="C2" />
-                                            </columns>
-                                            <VBox.margin>
-                                                <Insets left="30.0" right="30.0" top="30.0" />
-                                            </VBox.margin>
-                                        </TableView>
-                                    </children>
-                                </VBox>
-                            </center>
-                            <bottom>
-                                <HBox alignment="CENTER_RIGHT" minHeight="50.0" prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
-                                    <children>
-                                        <Button fx:id="btn_userEPay_excel" mnemonicParsing="false" text="엑셀 내보내기">
-                                            <HBox.margin>
-                                                <Insets right="30.0" />
-                                            </HBox.margin>
-                                        </Button>
-                                    </children>
-                                </HBox>
-                            </bottom>
-                            <top>
-                                <Label text="추가 수당 현황 조회" BorderPane.alignment="CENTER">
-                                    <BorderPane.margin>
-                                        <Insets top="20.0" />
-                                    </BorderPane.margin>
-                                </Label>
-                            </top>
                         </BorderPane>
                     </content>
                 </Tab>
             </tabs>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
         </TabPane>
     </children>
+   <padding>
+      <Insets right="10.0" />
+   </padding>
 </StackPane>

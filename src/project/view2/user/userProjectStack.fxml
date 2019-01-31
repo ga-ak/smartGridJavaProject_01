@@ -11,16 +11,10 @@
 <StackPane fx:id="stack_userProject" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserProject">
    <children>
       <BorderPane prefHeight="800.0" prefWidth="1000.0">
-         <top>
-            <Label focusTraversable="false" text="개인 프로젝트" BorderPane.alignment="CENTER">
-               <font>
-                  <Font size="13.0" />
-               </font></Label>
-         </top>
          <bottom>
             <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button focusTraversable="false" mnemonicParsing="false" text="등록">
+                  <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="등록">
                      <HBox.margin>
                         <Insets bottom="20.0" right="10.0" />
                      </HBox.margin>
@@ -28,7 +22,7 @@
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button focusTraversable="false" mnemonicParsing="false" text="이름수정">
+                  <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="이름수정">
                      <HBox.margin>
                         <Insets bottom="20.0" right="10.0" />
                      </HBox.margin>
@@ -36,7 +30,7 @@
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button focusTraversable="false" mnemonicParsing="false" text="시작일 변경">
+                  <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="시작일 변경">
                      <HBox.margin>
                         <Insets bottom="20.0" right="10.0" />
                      </HBox.margin>
@@ -44,9 +38,9 @@
                         <Font size="13.0" />
                      </font>
                   </Button>
-                  <Button focusTraversable="false" mnemonicParsing="false" text="종료일 변경">
+                  <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="종료일 변경">
                      <HBox.margin>
-                        <Insets bottom="20.0" right="40.0" />
+                        <Insets bottom="20.0" right="20.0" />
                      </HBox.margin>
                      <font>
                         <Font size="13.0" />
@@ -59,7 +53,7 @@
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1000.0">
                      <children>
-                        <Label alignment="CENTER" focusTraversable="false" prefWidth="300.0" text="프로젝트이름" textOverrun="CLIP">
+                        <Label alignment="CENTER" focusTraversable="false" prefWidth="250.0" text="프로젝트이름" textOverrun="CLIP">
                            <font>
                               <Font size="13.0" />
                            </font></Label>
@@ -67,11 +61,11 @@
                            <font>
                               <Font size="13.0" />
                            </font></Label>
-                        <Label alignment="CENTER" focusTraversable="false" prefWidth="280.0" text="진척율">
+                        <Label alignment="CENTER" focusTraversable="false" prefWidth="280.0" text="진행률">
                            <font>
                               <Font size="13.0" />
                            </font></Label>
-                        <Label alignment="CENTER" focusTraversable="false" prefWidth="190.0" text="프로젝트기간">
+                        <Label alignment="CENTER" focusTraversable="false" prefWidth="240.0" text="프로젝트기간">
                            <font>
                               <Font size="13.0" />
                            </font></Label>
@@ -91,4 +85,7 @@
          </center>
       </BorderPane>
    </children>
+   <padding>
+      <Insets right="10.0" />
+   </padding>
 </StackPane>

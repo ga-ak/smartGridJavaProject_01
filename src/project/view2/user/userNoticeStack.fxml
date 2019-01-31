@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
@@ -12,44 +13,43 @@
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <bottom>
-            <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btn_noticeCheck" focusTraversable="false" mnemonicParsing="false" text="모든 알림 확인하기">
+                  <Button fx:id="btn_noticeCheck" disable="true" focusTraversable="false" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="모든 알림 확인하기">
                      <HBox.margin>
-                        <Insets bottom="15.0" right="30.0" />
+                        <Insets bottom="20.0" right="20.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font>
                   </Button>
                </children>
             </HBox>
          </bottom>
          <center>
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-               <children>
-                  <TableView fx:id="tbv_noticeTable" focusTraversable="false" prefHeight="715.0" prefWidth="1000.0">
-                    <columns>
-                      <TableColumn prefWidth="70.0" text="번호" />
-                      <TableColumn prefWidth="105.0" text="보낸이" />
-                        <TableColumn prefWidth="480.0" text="알림내용" />
-                        <TableColumn prefWidth="158.0" text="보낸시간" />
-                        <TableColumn prefWidth="125.0" text="비고" />
-                    </columns>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                  </TableView>
-               </children>
-               <BorderPane.margin>
-                  <Insets left="30.0" right="30.0" />
-               </BorderPane.margin>
-            </VBox>
+            <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <content>
+                  <VBox alignment="TOP_CENTER" prefHeight="730.0" prefWidth="980.0">
+                     <children>
+                        <TableView fx:id="tbv_noticeTable" focusTraversable="false" prefHeight="730.0" prefWidth="1000.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" resizable="false" text="번호" />
+                            <TableColumn prefWidth="200.0" resizable="false" text="보낸이" />
+                              <TableColumn prefWidth="200.0" resizable="false" text="보낸시간" />
+                              <TableColumn prefWidth="125.0" resizable="false" text="비고" />
+                          </columns>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
          </center>
-         <top>
-            <Label fx:id="lbl_noticeState" focusTraversable="false" text="확인하지 않은 알림" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets bottom="10.0" />
-               </BorderPane.margin>
-            </Label>
-         </top>
       </BorderPane>
    </children>
+   <padding>
+      <Insets right="10.0" />
+   </padding>
 </StackPane>

@@ -34,10 +34,13 @@
                         </PasswordField>
                      </children>
                   </VBox>
-                  <Button fx:id="btn_login" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="130.0" text="로그인">
+                  <Button fx:id="btn_login" focusTraversable="false" mnemonicParsing="false" prefHeight="100.0" prefWidth="130.0" text="LOG IN">
                      <HBox.margin>
                         <Insets left="50.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="25.0" />
+                     </font>
                   </Button>
                </children>
                <opaqueInsets>
