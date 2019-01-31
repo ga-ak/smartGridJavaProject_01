@@ -26,6 +26,7 @@ public class Main extends Application {
         Main_init mainController = new Main_init();
         mainController.setPrimaryStage(primaryStage);
         LogInController logInController = new LogInController();
+        PWDial pd = new PWDial();
         System.out.println("debug3");
 
         Parent root = mainloader.load();
@@ -45,6 +46,8 @@ public class Main extends Application {
             UserController userController = userLoader.getController();
 
         }
+
+        System.out.println();
 
     }
 }

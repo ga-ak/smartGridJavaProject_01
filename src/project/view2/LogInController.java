@@ -58,7 +58,6 @@ public class LogInController {
         System.out.println("입력한 비밀번호 : "+loggedPW);
         String limit = "employee_id = "+loggedID;
 
-
         // 사원번호는 중복이 없기 때문에 .get(0).get(0)으로 비밀번호를 가져올 수 있다
         ArrayList<ArrayList<String>> tempResult = dao.select("employees", columns, limit);
         String selectedPW = tempResult.get(0).get(0);

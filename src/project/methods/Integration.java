@@ -3,6 +3,7 @@ package project.methods;
 import project.dao.Controller;
 import project.dao.DAO;
 
+import javax.xml.transform.sax.SAXSource;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,9 +14,21 @@ public class Integration {
     static String InputID = null;
 
     public static void main(String[] args) {
+        //ID를 리턴받음
 //		login(); 						// 로그인
+
 //		Emp_FindPW();					//패스워드찾기(철호선생님 문자로쏴주세요)
-//		Emp_search(); 					//사원정보검색
+
+//         strarr[0]은 문자 보낼 전화번호, strarr[1]은 문자보낼 사원의 이름 strarr[2]는 바뀐 전화번호
+//         FindPW 메소드는 배열의 길이가 2인 문자열 배열을 리턴받음
+//        String[] strarr = Emp_FindPW();
+//        for(int i=0;i<strarr.length;i++){
+//            System.out.println(strarr[i]);
+//        }
+//		ArrayList<String> tmparr = Emp_search(); 					//사원정보검색
+//        for(int i=0;i<tmparr.size();i++){
+//            System.out.println(tmparr.get(i));
+//        }
 //		Emp_ADupdate();					//주소수정
 //		Emp_PWupdate();					//비밀번호변경
 //		Emp_Telupdate();				//전화번호변경
@@ -30,7 +43,7 @@ public class Integration {
 //		Emp_Pro_Calculate_progress();	//전체 프로젝트 진척률 계산
 
 //		Man_Emp_Ser_Name();				//사원 이름으로 검색
-//		Man_Emp_Ser_Dept();				//부서 이름으로 검색
+		Man_Emp_Ser_Dept();				//부서 이름으로 검색
 //		Man_Emp_Ser_Job();				//직급 이름으로 검색
 //		Man_Emp_Update_EmpAD(); 		//사원번호 변경
 //		Man_Emp_Del_EmpDel(); 			//사원삭제
@@ -40,6 +53,7 @@ public class Integration {
 //		Man_Cer_AllSer();				//자격증 전체 검색
 //		Man_Cer_Update();				//자격증 수정
 //		Man_Cer_Del();					//자격증 삭제
+//      Man_Extrapay_Insert();         //추가수당 추가
 //		Man_Pro_AllSer();				//전체프로젝트 조회
 //		Man_Pro_EmpNameSer();			//사원이름으로 프로젝트 조회
 //		Man_Pro_ProNameSer();			//프로젝트 이름으로 조회
@@ -51,12 +65,31 @@ public class Integration {
 //		Man_Pro_EndUpdate();			//프로젝트 종료일 변경
 //		Man_Pro_ProNameUpdate();		//프로젝트 이름변경
 //		Man_Pro_ProDel();				//프로젝트 삭제
-//		Man_Msg_Emp();					//사원선택해서 문자보내기
-//		Man_Msg_Dept(); 				//부서별 문자보내기
-//		Man_Msg_Job();					//직급별 문자보내기
+
+        //가변배열을 return받음 사원번호:!!!!, !!!님 ~~로 ~~까지 오세요
+        // !!는 각각 가변배열에서 추출해온 값, ~~는 내가 정할 값
+        // 정확한 이름 써야 나오고 동명이인이 있기 때문에 사원번호까지 나오게함
+//        ArrayList<String>emparr = Man_Msg_Emp();					//사원선택해서 문자보내기
+//        for(int i=0;i<emparr.size();i++){
+//            System.out.println(emparr.get(i));
+//        }
+
+        //가변배열을 return받음 !!님 ~~로 ~~까지 오세요 ~~님은 department_name으로 검색했음
+        // !!는 각각 가변배열에서 추출해온 값, ~~는 내가 정할 값
+        // 제약조건 like써서 '인'만 쳐도 인사 나옴
+//        ArrayList<String>deptarr = Man_Msg_Dept(); 				//부서별 문자보내기
+//        for(int i=0;i<deptarr.size();i++){
+//            System.out.println(deptarr.get(i));
+//        }
+
+        //가변배열을 return받음 !!님 ~~로 ~~까지 오세요 ~~님은 jobgrade_id로 검색
+//		ArrayList<String>jarr = Man_Msg_Job();					//직급별 문자보내기
+//        for(int i=0;i<jarr.size();i++){
+//            System.out.println(jarr.get(i));
+//        }
     }
 
-    public static void login() {// 로그인하기(사원/관리자 체크)
+    public static String login() {// 로그인하기(사원/관리자 체크)
         Controller con = new Controller();
         DAO dao = new DAO(con);
 
@@ -96,6 +129,7 @@ public class Integration {
             if (temparr2.size() != 0 && temparr2.get(2).equals("150")) {
                 System.out.println("관리자로 로그인 성공");
                 con.printSelected(dao.select("employees", columns, limit));
+                return InputID;
             } else {
                 System.out.println("관리자로 로그인 실패");
             }
@@ -107,14 +141,15 @@ public class Integration {
             if (temparr2.size() != 0) {
                 System.out.println("사원으로 로그인 성공");
                 con.printSelected(dao.select("employees", columns, limit));
+                return InputID;
             } else {
                 System.out.println("사원으로 로그인 실패");
             }
         }
-
+                return null;
     }
 
-    public static void Emp_FindPW() {
+    public static String[] Emp_FindPW() {
         Controller con = new Controller();
         DAO dao = new DAO(con);
         Scanner sc = new Scanner(System.in);
@@ -128,6 +163,7 @@ public class Integration {
 
         // 전화번호 가져올 column
         columns.add("contact");
+        columns.add("employee_name");
 
         // 제약조건 dao.select문에서는 주민번호까지 확인
         String limit = "employee_id= " + empid + " and ssn ='" + empssn + "'";
@@ -144,6 +180,8 @@ public class Integration {
         }
         // 전화번호 Tel 문자열에 저장하기.
         String Tel = temparr2.get(0);
+
+        String name = temparr2.get(1);
 
         // 임의의 비밀번호 새로 만들기
         String updatePW = "";
@@ -166,10 +204,15 @@ public class Integration {
         }
         // 변경된 비밀번호 업데이트
         dao.update("employees", "password", updatePW, limit2);
+
+        //전화번호와 비밀번호 배열 strarr[0]은 전화번호, strarr[1]은 비밀번호, 만약 일치하지 않는다면 strarr은 비어있음.
+        String[] strarr = {Tel, name, updatePW};
+
+        return strarr;
         // 문자열 password에 있는 생성된 임의의 비밀번호를 Tel에 문자로 쏴주면됨.
     }
 
-    public static void Emp_search() {
+    public static ArrayList<String> Emp_search() {
 
         // 회원정보보기
         Scanner sc = new Scanner(System.in);
@@ -190,6 +233,16 @@ public class Integration {
         // 회원정보 보기
         // System.out.println("[1]사원이름\t[2]사원번호\t[3]부서\t[4]직급\t[5]입사일\t[6]주소[7]연락처");
         con.printSelected(dao.select("EMPLOYEES", columns, limit));
+
+        ArrayList<ArrayList<String>> tempArray = dao.select("EMPLOYEES", columns, limit);
+        ArrayList<String> temparr2 = new ArrayList<String>();
+        for (int i = 0; i < tempArray.size(); i++) {
+            for (int j = 0; j < tempArray.get(i).size(); j++) {
+                String tempValue2 = tempArray.get(i).get(j);
+                temparr2.add(tempValue2);
+            }
+        }
+        return temparr2;
 
     }
 
@@ -355,6 +408,84 @@ public class Integration {
 
         dao.update("EXTRAPAY", "SUM", sum, limit);
 
+    }
+    public static void Man_Extrapay_Insert(){
+        Controller con = new Controller();
+        DAO dao = new DAO(con);
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> columns = new ArrayList<>();
+        columns.add("EXTRAPAY_ID");
+        columns.add("EMPLOYEE_ID");
+        columns.add("EXTRAPAY_DATE");
+        columns.add("GET_DATE");
+        columns.add("OVERTIME");
+        columns.add("BONUS");
+        columns.add("CERTIFICATE_ID");
+        columns.add("SUM");
+        ArrayList<String> values = new ArrayList<>();
+        System.out.println("추가수당번호를 입력하세요");
+        String extraID = sc.next();
+        values.add(extraID);
+        System.out.println("추가수당을 받을 사원번호를 입력하세요");
+        String emp_id = sc.next();
+        values.add(emp_id);
+        System.out.println("추가수당을 얻은 날을 입력하세요");
+        String extraDATE = sc.next();
+        values.add(extraDATE);
+        System.out.println("추가수당을 받을 날을 입력하세요");
+        String getdate = sc.next();
+        values.add(getdate);
+        System.out.println("일한 초과시간을 입력하세요");
+        String overtime =sc.next();
+        values.add(overtime);
+        System.out.println("받을 상여금을 입력하세요");
+        String bonus = sc.next();
+        values.add(bonus);
+        System.out.println("획득한 자격증 번호를 입력하세요");
+        String cerid = sc.next();
+        values.add(cerid);
+
+        ArrayList<String > tmparr = new ArrayList<>();
+        tmparr.add("base_salary");
+
+       ArrayList<ArrayList<String>> arr =  dao.select("employees", tmparr, "employee_id="+emp_id);
+       ArrayList<String> arr2 = new ArrayList<>();
+       for(int i=0;i<arr.size();i++){
+           for(int j=0;j<arr.get(i).size();j++){
+               String b_salary = arr.get(i).get(j);
+               arr2.add(b_salary);
+           }
+       }
+        int BA = Integer.parseInt(arr2.get(0)) * 10000;
+        int OT = Integer.parseInt(arr2.get(0))*10000/((20*8)*3/2*Integer.parseInt(overtime));
+        int BO = Integer.parseInt(arr2.get(0))*10000/3;
+
+        String limit2 = "e.employee_id ="+InputID+" and c.certificate_id = e.certificate_id";
+
+        ArrayList<String> tmparr2 = new ArrayList<>();
+        tmparr2.add("c.certificate_money");
+       ArrayList<ArrayList<String>>cerarr = dao.select("certificate c, extrapay e", tmparr2, limit2);
+       ArrayList<String> cerarr2 = new ArrayList<>();
+       int cmoney =0;
+       if(cerarr.size()!=0) {
+           for (int i = 0; i < cerarr.size(); i++) {
+               for (int j = 0; j < cerarr.get(i).size(); j++) {
+                   cerarr2.add(cerarr.get(i).get(j));
+               }
+           }
+       }else{
+           cmoney = 0;
+       }
+       for(int i=0;i<cerarr2.size();i++){
+           cmoney+=Integer.parseInt(cerarr2.get(i));
+       }
+
+        int sum = BA + cmoney + OT + BO;
+       String sum0 = Integer.toString(sum);
+       values.add(sum0);
+
+
+        dao.insert("extrapay", columns, values);
     }
 
     public static void Emp_Pro_Insert() {
@@ -741,7 +872,38 @@ public class Integration {
         controller.printSelected(dao.select("employees e, departments d, jobgrades j", a,
                 "e.department_id = d.department_id and e.jobgrade_id = j.jobgrade_id and upper(d.department_name) like \'%\'||upper("
                         + "\'%" + searDept + "%\')||\'%\'"));
-    }
+
+        ArrayList<ArrayList<String>> strarr = dao.select("employees e, departments d, jobgrades j", a,
+                "e.department_id = d.department_id and e.jobgrade_id = j.jobgrade_id and upper(d.department_name) like \'%\'||upper("
+                        + "\'%" + searDept + "%\')||\'%\'");
+
+        ArrayList<String> temparr2 = new ArrayList<String>();
+        ArrayList<String> temparr3 = new ArrayList<>();
+        ArrayList<String> temparr4 = new ArrayList<>();
+        for(int i=0;i<strarr.size();i++) {
+            for (int j = 0; j < strarr.get(i).size(); j++) {
+                if (j == 3 || j == 6) {
+                    temparr2.add(strarr.get(i).get(j));
+                }
+            }
+        }
+
+            for (int i = 0; i < temparr2.size(); i++) {
+                if(i%2==0) {
+                    System.out.println();
+                    temparr3.add(temparr2.get(i));
+                }else {
+                    temparr4.add(temparr2.get(i));
+                }
+            }
+            for(int i=0;i<temparr3.size();i++){
+                System.out.print(temparr3.get(i)+"\t");
+                System.out.print(temparr4.get(i)+"\t");
+                System.out.println();
+            }
+
+
+        }
 
     public static void Man_Emp_Ser_Job() {
         Scanner sc = new Scanner(System.in);
@@ -1184,6 +1346,7 @@ public class Integration {
         System.out.print("변경될 프로젝트 이름 >>  ");
         String tempValue = sc.next();
         dao.update("PROJECT", "PROJECT_NAME", tempValue, limit);
+
     }
 
     public static void Man_Pro_ProDel() {
@@ -1197,53 +1360,60 @@ public class Integration {
         System.out.println("프로젝트 삭제 완료");
     }
 
-    public static void Man_Msg_Emp() {
+    public static ArrayList<String> Man_Msg_Emp() {
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<String> temparr2 = new ArrayList<String>();
         Controller con = new Controller();
         DAO dao = new DAO(con);
 
         // select를 하기위해 컬럼을 어레이 리스트로 만들어서 넣어줌
         ArrayList<String> Emp_name = new ArrayList<>();
+        Emp_name.add("EMPLOYEE_ID");
         Emp_name.add("EMPLOYEE_NAME");
 
         ArrayList<ArrayList<String>> tempArray = new ArrayList<ArrayList<String>>();
 
         // con.printSelected(dao.select("EMPLOYEES", Emp_name, call_name));
+
+        ArrayList<String> temparr2 = new ArrayList<String>();
+        ArrayList<String> temparr3 = new ArrayList<String>();
+        ArrayList<String> emparr = new ArrayList<String>();
+
         while (true) {
             System.out.println("[1]호출할 사원 [2]스톱");
             int cho = sc.nextInt();
             if (cho == 2) {
                 break;
             }
-
-            System.out.println("호출할 사원번호 입력");
+            System.out.println("호출할 사원이름 입력");
             // 호출할 사원번호를 입력하면 EMPLOYEE_ID = 뒤에 스캐너로 입력받음
-            String call_name = "EMPLOYEE_ID= " + sc.next();
+            String call_name = "EMPLOYEE_NAME= '" + sc.next()+"'";
             // select문 완성
             tempArray = dao.select("EMPLOYEES", Emp_name, call_name);
 
             for (int i = 0; i < tempArray.size(); i++) {
                 for (int j = 0; j < tempArray.get(i).size(); j++) {
-                    String tempValue2 = tempArray.get(i).get(j);
-                    temparr2.add(tempValue2);
+                    if(j%2==1) {
+                        String tempValue2 = tempArray.get(i).get(j);
+                        temparr2.add(tempValue2);
+                    }else{
+                        String tempValue2 = tempArray.get(i).get(j);
+                        temparr3.add(tempValue2);
+                    }
                 }
             }
-
         }
         System.out.print("장소를 입력해주세요");
         String lc = sc.next();
         System.out.print("시간을 입력해주세요");
         int time = sc.nextInt();
         for (int i = 0; i < temparr2.size(); i++) {
-            System.out.print(temparr2.get(i) + "님   ");
-            System.out.println(lc + "로  " + time + "시까지 오세요");
-
+            emparr.add("사원번호: "+temparr3.get(i)+", "+temparr2.get(i)+"님 "+lc+"(으)로 "+time+"시까지 오세요");
         }
+        return emparr;
     }
 
-    public static void Man_Msg_Dept() {
+    public static ArrayList<String> Man_Msg_Dept() {
         Scanner sc = new Scanner(System.in);
 
         ArrayList<String> temparr2 = new ArrayList<String>();
@@ -1256,9 +1426,9 @@ public class Integration {
 
         // con.printSelected(dao.select("EMPLOYEES", Emp_name, call_name));
 
-        System.out.println("호출할 부서 입력해주세요");
-        String call_name = "DEPARTMENT_ID = " + sc.next();
-        tempArray = dao.select("EMPLOYEES", Emp_name, call_name);
+        System.out.println("호출할 부서의 이름을 입력해주세요");
+        String limit = "D.DEPARTMENT_NAME LIKE '%" + sc.next()+"%' and d.department_id=e.department_id";
+        tempArray = dao.select("EMPLOYEES E, DEPARTMENTS D", Emp_name, limit);
 
         for (int i = 0; i < tempArray.size(); i++) {
             for (int j = 0; j < tempArray.get(i).size(); j++) {
@@ -1267,18 +1437,18 @@ public class Integration {
             }
         }
 
+        ArrayList<String> deptarr = new ArrayList<>();
         System.out.print("장소를 입력해주세요");
         String lc = sc.next();
         System.out.print("시간을 입력해주세요");
         int time = sc.nextInt();
         for (int i = 0; i < temparr2.size(); i++) {
-            System.out.print(temparr2.get(i) + "님   ");
-            System.out.println(lc + "로  " + time + "시까지 오세요");
-
+            deptarr.add(temparr2.get(i)+"님 "+lc+"로 "+time+"시 까지 오세요");
         }
+        return deptarr;
     }
 
-    public static void Man_Msg_Job() {
+    public static ArrayList<String> Man_Msg_Job() {
         Scanner sc = new Scanner(System.in);
 
         ArrayList<String> temparr2 = new ArrayList<String>();
@@ -1291,7 +1461,7 @@ public class Integration {
 
         // con.printSelected(dao.select("EMPLOYEES", Emp_name, call_name));
 
-        System.out.println("호출할 직급 입력해주세요");
+        System.out.println("호출할 직급의 숫자를 입력해주세요");
         String call_name = "JOBGRADE_ID = " + sc.next();
         tempArray = dao.select("EMPLOYEES", Emp_name, call_name);
 
@@ -1301,15 +1471,18 @@ public class Integration {
                 temparr2.add(tempValue2);
             }
         }
+//      문장을 넣어서 리턴받을 jobarray 생성
 
+        ArrayList<String> jobarray = new ArrayList<String>();
         System.out.print("장소를 입력해주세요");
         String lc = sc.next();
         System.out.print("시간을 입력해주세요");
         int time = sc.nextInt();
         for (int i = 0; i < temparr2.size(); i++) {
-            System.out.print(temparr2.get(i) + "님   ");
-            System.out.println(lc + "로  " + time + "시까지 오세요");
+            jobarray.add(temparr2.get(i)+"님  "+lc + " 로  "+time + " 시까지 오세요");
         }
+        //(직급에해당하는 사원의 이름(계속 바뀜))님 (장소)로 (시간)시까지 오세요 를 저장하는 가변배열
+        return jobarray;
     }
 
 }
