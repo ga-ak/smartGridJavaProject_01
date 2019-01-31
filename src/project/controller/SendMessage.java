@@ -1,4 +1,4 @@
-package feature.message.sendMessage;
+package project.controller;
 
 import net.nurigo.java_sdk.api.GroupMessage;
 import net.nurigo.java_sdk.api.Message;
@@ -10,17 +10,18 @@ import java.util.HashMap;
 
 public class SendMessage {
 
-    public void send(String phoneNum, String name) {
+    public void send(String phoneNum, String name, String formatedText) {
         String api_key = "NCSWPDL8IUFAJVNA";
         String api_secret = "QJYNG3NEB6W8MQ1CWOE9OM5LSZGF5NJB";
         Message coolsms = new Message(api_key, api_secret);
+        String text = String.format(formatedText, name, phoneNum);
 
         // 4 params(to, from, type, text) are mandatory. must be filled
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("to", phoneNum); // 수신번호
         params.put("from", "01020142889"); // 발신번호
         params.put("type", "SMS"); // Message type ( SMS, LMS, MMS, ATA )
-        params.put("text", name + "에게 자바로 보낸 문자메시지"); // 문자내용
+        params.put("text", text); // 문자내용
         params.put("app_version", "JAVA SDK v2.1"); // application name and version
 
         try {
