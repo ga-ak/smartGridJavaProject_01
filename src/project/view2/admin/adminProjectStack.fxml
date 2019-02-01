@@ -7,41 +7,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.admin.AdminProject">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.admin.AdminProject">
    <children>
-      <BorderPane prefHeight="800.0" prefWidth="950.0">
+      <BorderPane prefHeight="800.0" prefWidth="1000.0">
          <center>
             <VBox>
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ComboBox fx:id="cbx_searchOpt" prefWidth="150.0" promptText="검색 조건" />
-                        <TextField fx:id="tbx_searchVal">
+                        <ComboBox fx:id="cbx_searchOpt" prefHeight="30.0" prefWidth="110.0" promptText="검색 조건" />
+                        <TextField fx:id="tbx_searchVal" focusTraversable="false" prefHeight="30.0" prefWidth="150.0">
                            <HBox.margin>
-                              <Insets left="20.0" right="20.0" />
+                              <Insets left="20.0" right="10.0" />
                            </HBox.margin>
                         </TextField>
-                        <Button fx:id="btn_search" mnemonicParsing="false" text="검색" />
+                        <Button fx:id="btn_search" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="검색" />
                      </children>
                   </HBox>
-                  <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="607.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="587.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <content>
-                        <VBox prefHeight="607.0" prefWidth="950.0">
-                           <children>
-                              <TableView fx:id="tbv_projectTable" focusTraversable="false" prefHeight="607.0" prefWidth="950.0" scaleShape="false">
-                                 <columns>
-                                    <TableColumn fx:id="tbc_projetID" prefWidth="150.0" text="프로젝트번호" />
-                                    <TableColumn fx:id="tbc_projectName" prefWidth="200.0" text="프로젝트이름" />
-                                    <TableColumn fx:id="tbc_projectLeader" prefWidth="130.0" text="담당자" />
-                                    <TableColumn fx:id="tbc_projectStart" prefWidth="225.0" text="시작일" />
-                                    <TableColumn fx:id="tbc_projectEnd" prefWidth="225.0" text="종료일" />
-                                 </columns>
-                                 <VBox.margin>
-                                    <Insets />
-                                 </VBox.margin>
-                              </TableView>
-                           </children>
-                        </VBox>
+                        <TableView fx:id="tbv_projectTable" focusTraversable="false" prefHeight="587.0" prefWidth="990.0" scaleShape="false">
+                           <columns>
+                              <TableColumn fx:id="tbc_projetID" prefWidth="150.0" text="프로젝트번호" />
+                              <TableColumn fx:id="tbc_projectName" prefWidth="200.0" text="프로젝트이름" />
+                              <TableColumn fx:id="tbc_projectLeader" prefWidth="130.0" text="담당자" />
+                              <TableColumn fx:id="tbc_projectStart" prefWidth="225.0" text="시작일" />
+                              <TableColumn fx:id="tbc_projectEnd" prefWidth="225.0" text="종료일" />
+                           </columns>
+                        </TableView>
                      </content>
                   </ScrollPane>
                </children>
@@ -50,27 +43,24 @@
          <bottom>
             <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btn_insertProject" focusTraversable="false" mnemonicParsing="false" text="프로젝트 등록">
+                  <Button fx:id="btn_insertProject" focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="프로젝트 등록">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="10.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="btn_updateProject" focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="프로젝트 수정">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="10.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="btn_deleteProject" focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="프로젝트 삭제">
                      <HBox.margin>
                         <Insets bottom="20.0" right="20.0" />
-                     </HBox.margin></Button>
-                  <Button fx:id="btn_updateProject" focusTraversable="false" mnemonicParsing="false" text="프로젝트 수정">
-                     <HBox.margin>
-                        <Insets bottom="20.0" right="20.0" />
-                     </HBox.margin></Button>
-                  <Button fx:id="btn_deleteProject" focusTraversable="false" mnemonicParsing="false" text="프로젝트 삭제">
-                     <HBox.margin>
-                        <Insets bottom="20.0" right="40.0" />
                      </HBox.margin></Button>
                </children>
             </HBox>
          </bottom>
-         <top>
-            <Label focusTraversable="false" text="프로젝트 목록" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets bottom="10.0" />
-               </BorderPane.margin></Label>
-         </top>
       </BorderPane>
    </children>
+   <padding>
+      <Insets right="10.0" />
+   </padding>
 </StackPane>

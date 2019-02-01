@@ -8,9 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TabPane focusTraversable="false" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane focusTraversable="false" minWidth="1000.0" prefHeight="200.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="사원 검색/수정">
                <content>
@@ -39,7 +39,7 @@
                      <center>
                         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0">
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <SplitMenuButton focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="이름검색">
                                       <items>
@@ -53,7 +53,7 @@
                                           <Font size="13.0" />
                                        </font>
                                     </SplitMenuButton>
-                                    <TextField focusTraversable="false" prefHeight="30.0" prefWidth="180.0">
+                                    <TextField focusTraversable="false" prefHeight="30.0" prefWidth="150.0">
                                        <HBox.margin>
                                           <Insets left="20.0" />
                                        </HBox.margin>
@@ -64,7 +64,7 @@
                                           <Font size="13.0" />
                                        </font>
                                     </TextField>
-                                    <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="검색">
+                                    <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="검색">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
@@ -74,19 +74,23 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <TableView focusTraversable="false" prefHeight="621.0" prefWidth="950.0">
-                                <columns>
-                                  <TableColumn prefWidth="100.0" text="사원번호" />
-                                  <TableColumn prefWidth="100.0" text="부서번호" />
-                                    <TableColumn prefWidth="90.0" text="직급" />
-                                    <TableColumn prefWidth="100.0" text="이름" />
-                                    <TableColumn prefWidth="90.0" text="기본급" />
-                                    <TableColumn prefWidth="97.0" text="주소" />
-                                    <TableColumn prefWidth="115.0" text="연락처" />
-                                    <TableColumn prefWidth="120.0" text="입사일" />
-                                    <TableColumn prefWidth="120.0" text="주민등록번호" />
-                                </columns>
-                              </TableView>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="587.0" prefWidth="1000.0">
+                                 <content>
+                                    <TableView focusTraversable="false" prefHeight="587.0" prefWidth="1000.0">
+                                      <columns>
+                                        <TableColumn prefWidth="100.0" text="사원번호" />
+                                        <TableColumn prefWidth="100.0" text="부서번호" />
+                                          <TableColumn prefWidth="90.0" text="직급" />
+                                          <TableColumn prefWidth="100.0" text="이름" />
+                                          <TableColumn prefWidth="90.0" text="기본급" />
+                                          <TableColumn prefWidth="97.0" text="주소" />
+                                          <TableColumn prefWidth="115.0" text="연락처" />
+                                          <TableColumn prefWidth="120.0" text="입사일" />
+                                          <TableColumn prefWidth="120.0" text="주민등록번호" />
+                                      </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
                            </children>
                         </VBox>
                      </center>
@@ -96,63 +100,72 @@
           <Tab text="근무 이력">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
-                     <top>
-                        <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
-                                 <children>
-                                    <DatePicker focusTraversable="false" prefHeight="30.0" prefWidth="135.0" />
-                                    <DatePicker focusTraversable="false" prefHeight="30.0" prefWidth="135.0" />
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="200.0" prefWidth="100.0">
-                                 <children>
-                                    <TextField focusTraversable="false" prefWidth="120.0" promptText="이름" />
-                                    <Button focusTraversable="false" mnemonicParsing="false" text="검색" />
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
-                     </top>
                      <bottom>
                         <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Button focusTraversable="false" mnemonicParsing="false" text="엑셀 내보내기">
+                              <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="엑셀 내보내기">
                                  <HBox.margin>
-                                    <Insets bottom="20.0" right="20.0" />
+                                    <Insets bottom="20.0" right="10.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button focusTraversable="false" mnemonicParsing="false" text="정보 수정">
+                              <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="정보 수정">
                                  <HBox.margin>
-                                    <Insets bottom="20.0" right="40.0" />
+                                    <Insets bottom="20.0" right="20.0" />
                                  </HBox.margin>
                               </Button>
                            </children>
                         </HBox>
                      </bottom>
-                     <left>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="621.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                           <content>
-                              <VBox prefHeight="621.0" prefWidth="950.0">
+                     <center>
+                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <TableView prefHeight="621.0" prefWidth="200.0">
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="180.0">
+                                       <children>
+                                          <DatePicker focusTraversable="false" prefHeight="30.0" prefWidth="180.0" promptText="시작일" showWeekNumbers="true">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </DatePicker>
+                                          <DatePicker focusTraversable="false" prefHeight="30.0" prefWidth="180.0" promptText="마지막일" showWeekNumbers="true" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox alignment="CENTER" maxWidth="150.0" minWidth="150.0" prefHeight="200.0" prefWidth="150.0">
+                                       <children>
+                                          <TextField focusTraversable="false" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="근무 이력 - 사원명">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </TextField>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="75.0">
+                                       <children>
+                                          <Button focusTraversable="false" maxWidth="75.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="검색" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <ScrollPane hbarPolicy="NEVER" minWidth="990.0" prefHeight="587.0" prefWidth="990.0">
+                                 <content>
+                                    <TableView prefHeight="587.0" prefWidth="1000.0">
                                       <columns>
                                         <TableColumn prefWidth="160.0" text="사원이름" />
                                         <TableColumn prefWidth="160.0" text="출근일" />
                                           <TableColumn prefWidth="305.5" text="출근시간" />
                                           <TableColumn prefWidth="305.5" text="퇴근시간" />
                                       </columns>
-                                       <VBox.margin>
-                                          <Insets />
-                                       </VBox.margin>
                                     </TableView>
-                                 </children>
-                              </VBox>
-                           </content>
-                        </ScrollPane>
-                     </left>
-                     <center>
-                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                                 </content>
+                              </ScrollPane>
+                           </children></VBox>
                      </center>
                   </BorderPane>
                </content>
@@ -160,63 +173,58 @@
             <Tab text="급여 관리">
                 <content>
                     <BorderPane prefHeight="200.0" prefWidth="200.0">
-                        <top>
-                            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                <children>
-                                    <HBox alignment="CENTER" maxHeight="70.0" prefHeight="40.0" prefWidth="250.0">
-                                        <children>
-                                            <Label prefWidth="100.0" text="검색 시작일">
-                                                <HBox.margin>
-                                                    <Insets right="10.0" />
-                                                </HBox.margin>
-                                            </Label>
-                                            <DatePicker prefHeight="30.0" prefWidth="135.0" />
-                                        </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER" maxHeight="70.0" prefHeight="70.0" prefWidth="250.0">
-                                        <children>
-                                            <Label prefWidth="100.0" text="검색 종료일">
-                                                <HBox.margin>
-                                                    <Insets right="10.0" />
-                                                </HBox.margin>
-                                            </Label>
-                                            <DatePicker focusTraversable="false" prefHeight="30.0" prefWidth="135.0" />
-                                        </children>
-                                        <HBox.margin>
-                                            <Insets left="20.0" />
-                                        </HBox.margin>
-                                    </HBox>
-                                    <TextField prefWidth="120.0" promptText="이름">
-                                        <HBox.margin>
-                                            <Insets left="20.0" right="10.0" />
-                                        </HBox.margin>
-                                    </TextField>
-                                    <Button mnemonicParsing="false" text="검색" />
-                                </children>
-                            </HBox>
-                        </top>
                         <bottom>
                             <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                 <children>
-                                    <Button focusTraversable="false" mnemonicParsing="false" text="엑셀 내보내기">
+                                    <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="엑셀 내보내기">
                                         <HBox.margin>
-                                            <Insets bottom="20.0" right="20.0" />
+                                            <Insets bottom="20.0" right="10.0" />
                                         </HBox.margin>
                                     </Button>
-                                    <Button focusTraversable="false" mnemonicParsing="false" text="정보 수정">
+                                    <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="정보 수정">
                                         <HBox.margin>
-                                            <Insets bottom="20.0" right="40.0" />
+                                            <Insets bottom="20.0" right="20.0" />
                                         </HBox.margin>
                                     </Button>
                                 </children>
                             </HBox>
                         </bottom>
-                        <center>
-                            <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                                <content>
-                                    <VBox prefHeight="621.0" prefWidth="950.0">
-                                        <children>
-                                            <TableView prefHeight="621.0" prefWidth="200.0">
+                     <center>
+                        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                           <children>
+                                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                      <children>
+                                    <VBox alignment="CENTER" prefHeight="100.0" prefWidth="180.0">
+                                       <children>
+                                                  <DatePicker prefHeight="30.0" prefWidth="180.0" promptText="시작일">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
+                                          </DatePicker>
+                                                  <DatePicker focusTraversable="false" prefHeight="30.0" prefWidth="180.0" promptText="마지막일" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="150.0">
+                                       <children>
+                                                <TextField prefHeight="30.0" prefWidth="120.0" promptText="급여 관리 - 사원명" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="75.0">
+                                       <children>
+                                                <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="검색" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                      </children>
+                                  </HBox>
+                                  <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="587.0" prefWidth="1000.0">
+                                 <content>
+                                            <TableView prefHeight="587.0" prefWidth="1000.0">
                                                 <columns>
                                                     <TableColumn prefWidth="105.0" text="사원번호" />
                                                     <TableColumn prefWidth="108.0" text="사원이름" />
@@ -226,15 +234,12 @@
                                           <TableColumn prefWidth="154.0" text="상여금" />
                                           <TableColumn prefWidth="170.0" text="자격증수당" />
                                                 </columns>
-                                                <VBox.margin>
-                                                    <Insets />
-                                                </VBox.margin>
                                             </TableView>
-                                        </children>
-                                    </VBox>
-                                </content>
-                            </ScrollPane>
-                        </center>
+                                 </content>
+                                  </ScrollPane>
+                           </children>
+                        </VBox>
+                     </center>
                     </BorderPane>
                 </content>
             </Tab>

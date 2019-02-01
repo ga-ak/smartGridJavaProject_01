@@ -9,7 +9,7 @@ public class insertPractice_main {
         DAO dao = new DAO(controller);
         AutoGenerator_employee ag = new AutoGenerator_employee();
         int startNum = 1000;
-        int lastNum = 1049;
+        int lastNum = 1099;
         int volume = lastNum - startNum + 1;
         long st = System.currentTimeMillis();
         ag.insertAllEmps(ag.employeeGenerator(dao, startNum, lastNum),dao);

@@ -25,7 +25,7 @@
                                             <children>
                                     <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
                                        <children>
-                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" text="이름 : ">
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="140.0" text="이름 : ">
                                                           <font>
                                                               <Font size="13.0" />
                                                           </font>
@@ -49,7 +49,7 @@
                                             <children>
                                     <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
                                        <children>
-                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" text="사원번호 : ">
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="140.0" text="사원번호 : ">
                                                           <font>
                                                               <Font size="13.0" />
                                                           </font>
@@ -76,7 +76,7 @@
                                             <children>
                                     <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
                                        <children>
-                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" text="부서 : ">
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="140.0" text="부서 : ">
                                                           <font>
                                                               <Font size="13.0" />
                                                           </font>
@@ -103,7 +103,7 @@
                                             <children>
                                     <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
                                        <children>
-                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" text="직급 : ">
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="140.0" text="직급 : ">
                                                           <font>
                                                               <Font size="13.0" />
                                                           </font>
@@ -130,7 +130,7 @@
                                             <children>
                                     <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
                                        <children>
-                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="200.0" text="입사일 : ">
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" prefHeight="30.0" prefWidth="140.0" text="입사일 : ">
                                                           <font>
                                                               <Font size="13.0" />
                                                           </font>
@@ -157,7 +157,7 @@
                                             <children>
                                     <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
                                        <children>
-                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="200.0" text="주소 : ">
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="140.0" text="주소 : ">
                                                           <font>
                                                               <Font size="13.0" />
                                                           </font>
@@ -184,7 +184,7 @@
                                             <children>
                                     <HBox maxWidth="500.0" prefHeight="100.0" prefWidth="500.0">
                                        <children>
-                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="200.0" text="연락처 : ">
+                                                      <Label alignment="CENTER_RIGHT" maxHeight="20.0" minHeight="30.0" minWidth="100.0" prefHeight="30.0" prefWidth="140.0" text="연락처 : ">
                                                           <font>
                                                               <Font size="13.0" />
                                                           </font>
@@ -211,7 +211,7 @@
                                           <children>
                                               <Button fx:id="btn_userPW_change" focusTraversable="false" mnemonicParsing="false" text="비밀번호 변경">
                                                   <HBox.margin>
-                                                      <Insets left="230.0" />
+                                                      <Insets left="171.0" />
                                                   </HBox.margin>
                                        <font>
                                           <Font size="13.0" />
@@ -264,12 +264,12 @@
                                                 <Insets />
                                             </VBox.margin>
                                         </HBox>
-                              <ScrollPane prefHeight="563.0" prefWidth="1059.0">
+                              <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="587.0" prefWidth="990.0">
                                  <content>
-                                              <TableView fx:id="tbv_userWorkTable" focusTraversable="false" prefHeight="560.0" prefWidth="988.0">
+                                              <TableView fx:id="tbv_userWorkTable" focusTraversable="false" prefHeight="587.0" prefWidth="990.0">
                                                   <columns>
-                                                      <TableColumn prefWidth="75.0" text="C1" />
-                                                      <TableColumn prefWidth="75.0" text="C2" />
+                                                      <TableColumn fx:id="tc_userIn" prefWidth="495.0" text="출근 시간" />
+                                                      <TableColumn fx:id="tc_userOut" prefWidth="495.0" text="퇴근 시간" />
                                                   </columns>
                                               </TableView>
                                  </content>
@@ -322,24 +322,29 @@
                                                 <Insets />
                                             </VBox.margin>
                                         </HBox>
-                                        <TableView fx:id="tbv_userEPayTable" focusTraversable="false" prefHeight="587.0" prefWidth="940.0">
-                                            <columns>
-                                                <TableColumn prefWidth="75.0" text="C1" />
-                                                <TableColumn prefWidth="75.0" text="C2" />
-                                            </columns>
-                                            <VBox.margin>
-                                                <Insets />
-                                            </VBox.margin>
-                                        </TableView>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="587.0" prefWidth="990.0">
+                                 <content>
+                                              <TableView fx:id="tbv_userEPayTable" focusTraversable="false" prefHeight="587.0" prefWidth="990.0">
+                                                  <columns>
+                                                      <TableColumn fx:id="tc_userEPId" prefWidth="75.0" text="번호" />
+                                                      <TableColumn fx:id="tc_userOvertime" prefWidth="150.0" text="초과 근무" />
+                                          <TableColumn fx:id="tc_userCerNum" prefWidth="150.0" text="자격증번호" />
+                                          <TableColumn fx:id="tc_userBonus" prefWidth="150.0" text="상여금" />
+                                          <TableColumn fx:id="tc_userSum" prefWidth="200.0" text="총액" />
+                                          <TableColumn fx:id="tc_userEPDate" prefWidth="200.0" text="지급날짜" />
+                                                  </columns>
+                                              </TableView>
+                                 </content>
+                              </ScrollPane>
                                     </children>
                                 </VBox>
                             </center>
                             <bottom>
-                                <HBox alignment="CENTER_RIGHT" minHeight="50.0" prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                                <HBox alignment="CENTER_RIGHT" minHeight="50.0" prefHeight="70.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
                                     <children>
-                                        <Button fx:id="btn_userEPay_excel" focusTraversable="false" mnemonicParsing="false" text="엑셀 내보내기">
+                                        <Button fx:id="btn_userEPay_excel" focusTraversable="false" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" text="엑셀 내보내기">
                                             <HBox.margin>
-                                                <Insets right="30.0" />
+                                                <Insets bottom="20.0" right="20.0" />
                                             </HBox.margin>
                                         </Button>
                                     </children>

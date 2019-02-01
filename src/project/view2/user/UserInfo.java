@@ -1,16 +1,18 @@
 package project.view2.user;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.util.converter.LocalDateStringConverter;
 import project.dao.DAO;
 import project.view2.DAOContainer;
 import project.view2.LoginInfo;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -27,6 +29,24 @@ public class UserInfo implements Initializable {
     @FXML private Button btn_userPW_change;
     @FXML private Button btn_userInfo_save;
 
+    @FXML private TableView<WorkRecord> tbv_userWorkTable;
+    @FXML private TableColumn<WorkRecord, String> tc_userWorkDate;
+    @FXML private TableColumn<WorkRecord, String> tc_userIn;
+    @FXML private TableColumn<WorkRecord, String> tc_userOut;
+    @FXML private DatePicker dp_userWork_start;
+    @FXML private DatePicker dp_userWork_end;
+    @FXML private Button btn_userWork_search;
+
+    @FXML private TableView<ExtraPayRecord> tbv_userEPayTable;
+    @FXML private TableColumn<ExtraPayRecord, String> tc_userEPId;
+    @FXML private TableColumn<ExtraPayRecord, String> tc_userOvertime;
+    @FXML private TableColumn<ExtraPayRecord, String> tc_userBonus;
+    @FXML private TableColumn<ExtraPayRecord, String> tc_userCerNum;
+    @FXML private TableColumn<ExtraPayRecord, String> tc_userSum;
+    @FXML private TableColumn<ExtraPayRecord, String> tc_userEPDate;
+    @FXML private DatePicker dp_userEPay_start;
+    @FXML private DatePicker dp_userEPay_end;
+    @FXML private Button btn_userEPay_search;
 
 
     @Override
@@ -67,5 +87,103 @@ public class UserInfo implements Initializable {
 
     }
 
+    public void handle_myWorkDate_Search(ActionEvent event){
+        ArrayList<String> col = new ArrayList<>();
+
+        LocalDate stDate = dp_userWork_start.getValue();
+        LocalDate enDate = dp_userWork_end.getValue();
+        LocalDate arrStart = null;
+        LocalDate arrEnd = null;
+
+        col.add("start_time");
+        col.add("end_time");
+        ArrayList<ArrayList<String>> temp = dao.select("WORKRECORDS", col, "EMPLOYEE_ID = " + LoginInfo.loggedID);
+        ArrayList<ArrayList<String>> temp2 = new ArrayList<>();
+        ArrayList<String> resStr = new ArrayList<>();
+        ArrayList<Integer> cnt = new ArrayList<>();
+
+        LocalDateStringConverter conv = new LocalDateStringConverter();
+
+        //System.out.println(stDate.until(enDate).getDays());
+
+        for(int i = 0; i < temp.size(); i++){
+            arrStart = conv.fromString(temp.get(i).get(0).substring(0, 10));
+            arrEnd = conv.fromString(temp.get(i).get(1).substring(0, 10));
+
+            if(stDate.minusDays(1).isBefore(arrStart) && enDate.plusDays(2).isAfter(arrEnd)){
+                System.out.println(arrStart);
+                cnt.add(i);
+            }
+        }
+
+        if(cnt.size() == 0){
+
+        } else {
+            for(int i = cnt.get(0); i < cnt.get(cnt.size()-1); i++){
+                temp2.add(temp.get(i));
+            }
+
+            ObservableList<WorkRecord> workList = FXCollections.observableArrayList();
+            System.out.println(temp2.size());
+            for(int i = 0; i < temp2.size(); i++){
+                workList.add(new WorkRecord(temp2.get(i)));
+                //System.out.println(temp2.get(i));
+
+                tc_userIn.setCellValueFactory(cellData -> cellData.getValue().gettc_userIn());
+                tc_userOut.setCellValueFactory(cellData -> cellData.getValue().gettc_userOut());
+            }
+            tbv_userWorkTable.setItems(workList);
+        }
+    }
+
+    public void handle_myExtra_Search(ActionEvent event){
+        LocalDateStringConverter conv = new LocalDateStringConverter();
+        ArrayList<String> col = new ArrayList<>();
+
+        col.add("EXTRAPAY_ID");
+        col.add("OVERTIME");
+        col.add("BONUS");
+        col.add("CERTIFICATE_ID");
+        col.add("SUM");
+        col.add("EXTRAPAY_DATE");
+
+        ArrayList<ArrayList<String>> temp = dao.select("extrapay", col, "employee_id = " + LoginInfo.loggedID);
+        ArrayList<ArrayList<String>> temp2 = new ArrayList<>();
+        LocalDate stDate = dp_userEPay_start.getValue();
+        LocalDate enDate = dp_userEPay_end.getValue();
+        LocalDate extraDate;
+
+        ArrayList<Integer> cnt = new ArrayList<>();
+        System.out.println(temp.size());
+        for(int i = 0; i < temp.size(); i++){
+            extraDate = conv.fromString(temp.get(i).get(5).substring(0, 10));
+            System.out.println(extraDate);
+            System.out.println(i);
+            if(stDate.minusDays(1).isBefore(extraDate) && enDate.plusDays(2).isAfter(extraDate)){
+                System.out.println(extraDate);
+                cnt.add(i);
+            }
+        }
+
+        if(cnt.size() == 0){
+
+        } else {
+            for(int i = cnt.get(0); i < cnt.get(cnt.size()-1); i++){
+                temp2.add(temp.get(i));
+            }
+
+            ObservableList<ExtraPayRecord> extraList = FXCollections.observableArrayList();
+            System.out.println(temp2.size());
+            for(int i = 0; i < temp2.size(); i++){
+                extraList.add(new ExtraPayRecord(temp2.get(i)));
+                //System.out.println(temp2.get(i));
+
+                tc_userIn.setCellValueFactory(cellData -> cellData.getValue().gettc_userIn());
+                tc_userOut.setCellValueFactory(cellData -> cellData.getValue().gettc_userOut());
+            }
+            tbv_userEPayTable.setItems(extraList);
+        }
+
+    }
 
 }

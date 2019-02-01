@@ -7,31 +7,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.admin.AdminAnnounce">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.admin.AdminAnnounce">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <center>
             <ScrollPane focusTraversable="false" hbarPolicy="NEVER" maxHeight="680.0" prefHeight="680.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <content>
-                  <VBox prefHeight="680.0" prefWidth="950.0">
-                     <children>
-                        <TableView fx:id="tbv_adminNotice" focusTraversable="false" prefHeight="680.0" prefWidth="950.0">
-                          <columns>
-                            <TableColumn fx:id="tbc_noticeID" prefWidth="75.0" resizable="false" text="번호" />
-                            <TableColumn fx:id="tbc_noticeName" prefWidth="180.0" resizable="false" text="제목" />
-                              <TableColumn fx:id="tbc_noticeContent" maxWidth="495.0" prefWidth="495.0" resizable="false" text="내용" />
-                              <TableColumn fx:id="tbc_noticeDate" minWidth="0.0" prefWidth="180.0" resizable="false" text="등록일" />
-                          </columns>
-                           <VBox.margin>
-                              <Insets right="20.0" />
-                           </VBox.margin>
-                        </TableView>
-                     </children>
-                  </VBox>
-               </content>
                <BorderPane.margin>
                   <Insets top="20.0" />
                </BorderPane.margin>
+               <content>
+                  <TableView fx:id="tbv_adminNotice" focusTraversable="false" prefHeight="680.0" prefWidth="1000.0">
+                    <columns>
+                      <TableColumn fx:id="tbc_noticeID" prefWidth="75.0" resizable="false" text="번호" />
+                      <TableColumn fx:id="tbc_noticeName" prefWidth="180.0" resizable="false" text="제목" />
+                        <TableColumn fx:id="tbc_noticeContent" maxWidth="495.0" prefWidth="495.0" resizable="false" text="내용" />
+                        <TableColumn fx:id="tbc_noticeDate" minWidth="0.0" prefWidth="180.0" resizable="false" text="등록일" />
+                    </columns>
+                  </TableView>
+               </content>
             </ScrollPane>
          </center>
          <bottom>
@@ -52,9 +45,9 @@
                </children>
             </HBox>
          </bottom>
-         <top>
-            <Label focusTraversable="false" text="공지 관리" BorderPane.alignment="CENTER" />
-         </top>
       </BorderPane>
    </children>
+   <padding>
+      <Insets right="10.0" />
+   </padding>
 </StackPane>
