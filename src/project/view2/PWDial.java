@@ -46,7 +46,7 @@ public class PWDial implements Initializable {
         String tempName = null;
 
         String limit = "employee_id = "+inputId;
-
+        String password=null;
         ArrayList<ArrayList<String>> selectedValue = dao.select("employees", columns, limit);
         String formatedtext = null;
         if (selectedValue.size() >= 1) {
@@ -57,8 +57,8 @@ public class PWDial implements Initializable {
 
             String tempStr = "[%s]님 안녕하세요 변경된 비밀번호는 [%s]입니다\n비밀번호를 변경해 주세요!";
             CreatePassword cp = new CreatePassword();
-
-            formatedtext = String.format(tempStr, tempName, cp.createPW());
+            password = cp.createPW();
+            formatedtext = String.format(tempStr, tempName, password);
 
 
         }
@@ -70,6 +70,9 @@ public class PWDial implements Initializable {
 
             alert.setHeaderText("비밀번호 변경");
             alert.setContentText("변경된 비밀번호가 저장된 연락처로 전송되었습니다\n[내 정보 보기]에서 비밀번호를 변경해주세요!");
+
+            dao.update("employees", "password", password, limit);
+
             Stage thisStage = (Stage)btn_pwdSend.getScene().getWindow();
             alert.showAndWait();
             thisStage.close();

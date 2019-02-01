@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -10,41 +11,51 @@
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.admin.AdminAnnounce">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
-         <center>
-            <ScrollPane focusTraversable="false" hbarPolicy="NEVER" maxHeight="680.0" prefHeight="680.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <BorderPane.margin>
-                  <Insets top="20.0" />
-               </BorderPane.margin>
-               <content>
-                  <TableView fx:id="tbv_adminNotice" focusTraversable="false" prefHeight="680.0" prefWidth="1000.0">
-                    <columns>
-                      <TableColumn fx:id="tbc_noticeID" prefWidth="75.0" resizable="false" text="번호" />
-                      <TableColumn fx:id="tbc_noticeName" prefWidth="180.0" resizable="false" text="제목" />
-                        <TableColumn fx:id="tbc_noticeContent" maxWidth="495.0" prefWidth="495.0" resizable="false" text="내용" />
-                        <TableColumn fx:id="tbc_noticeDate" minWidth="0.0" prefWidth="180.0" resizable="false" text="등록일" />
-                    </columns>
-                  </TableView>
-               </content>
-            </ScrollPane>
-         </center>
          <bottom>
             <HBox alignment="BOTTOM_RIGHT" prefHeight="70.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btn_insertNotice" focusTraversable="false" mnemonicParsing="false" text="공지 등록">
+                  <Button fx:id="btn_message" focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="문자 공지 등록">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
                      <HBox.margin>
                         <Insets bottom="20.0" right="10.0" />
-                     </HBox.margin></Button>
-                  <Button fx:id="btn_updateNotice" focusTraversable="false" mnemonicParsing="false" text="공지 변경">
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btn_insertNotice" focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="공지 등록">
                      <HBox.margin>
                         <Insets bottom="20.0" right="10.0" />
-                     </HBox.margin></Button>
-                  <Button fx:id="btn_deleteNotice" focusTraversable="false" mnemonicParsing="false" text="공지 삭제">
+                     </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
+                  <Button fx:id="btn_updateNotice" focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="공지 변경">
                      <HBox.margin>
-                        <Insets bottom="20.0" right="40.0" />
-                     </HBox.margin></Button>
+                        <Insets bottom="20.0" right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
+                  <Button fx:id="btn_deleteNotice" focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="공지 삭제">
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
                </children>
             </HBox>
          </bottom>
+         <center>
+            <TableView fx:id="tbv_adminNotice" focusTraversable="false" prefHeight="680.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="tbc_noticeID" prefWidth="75.0" resizable="false" text="번호" />
+                <TableColumn fx:id="tbc_noticeName" prefWidth="180.0" resizable="false" text="제목" />
+                  <TableColumn fx:id="tbc_noticeContent" maxWidth="495.0" prefWidth="495.0" resizable="false" text="내용" />
+                  <TableColumn fx:id="tbc_noticeDate" minWidth="0.0" prefWidth="180.0" resizable="false" text="등록일" />
+              </columns>
+            </TableView>
+         </center>
       </BorderPane>
    </children>
    <padding>

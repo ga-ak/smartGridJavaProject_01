@@ -6,7 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.util.converter.LocalDateStringConverter;
+
 import project.dao.DAO;
 import project.view2.DAOContainer;
 import project.view2.LoginInfo;
@@ -52,8 +52,56 @@ public class UserInfo implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dao = DAOContainer.dao;
+        ArrayList<String> col = new ArrayList<>();
         MyInfo();
         btn_userInfo_save.setOnAction(event -> handle_myInfo_update(event));
+        ArrayList<ArrayList<String>> tempArr;
+
+        col.add("START_TIME");
+        col.add("END_TIME");
+
+        tempArr = dao.select("WORKRECORDS", col, "EMPLOYEE_ID = " + LoginInfo.loggedID);
+
+        ObservableList<WorkRecord> workList = FXCollections.observableArrayList();
+        ObservableList<ExtraPayRecord> extraList = FXCollections.observableArrayList();
+
+        for(int i = 0; i < tempArr.size(); i++){
+            workList.add(new WorkRecord(tempArr.get(i)));
+        }
+
+        btn_userInfo_save.setOnAction(event -> handle_myInfo_update(event));
+
+        tc_userIn.setCellValueFactory(cellData -> cellData.getValue().gettc_userIn());
+        tc_userOut.setCellValueFactory(cellData -> cellData.getValue().gettc_userOut());
+        tbv_userWorkTable.setItems(workList);
+
+        ArrayList<String> extraCol = new ArrayList<>();
+        ArrayList<ArrayList<String>> tempArr2;
+        extraCol.add("extrapay_id");
+        extraCol.add("overtime");
+        extraCol.add("bonus");
+        extraCol.add("certificate_id");
+        extraCol.add("sum");
+        extraCol.add("extrapay_date");
+
+        tempArr2 = dao.select("extrapay", extraCol, "EMPLOYEE_ID = " + LoginInfo.loggedID);
+
+        for(int i = 0; i < tempArr2.size(); i++){
+            extraList.add(new ExtraPayRecord(tempArr2.get(i)));
+        }
+
+        tc_userEPId.setCellValueFactory(cellData -> cellData.getValue().gettc_userEPId());
+        tc_userOvertime.setCellValueFactory(cellData -> cellData.getValue().gettc_userOvertime());
+        tc_userBonus.setCellValueFactory(cellData -> cellData.getValue().gettc_userBonus());
+        tc_userCerNum.setCellValueFactory(cellData -> cellData.getValue().gettc_userCerNum());
+        tc_userSum.setCellValueFactory(cellData -> cellData.getValue().gettc_userSum());
+        tc_userEPDate.setCellValueFactory(cellData -> cellData.getValue().gettc_userEPDate());
+        tbv_userEPayTable.setItems(extraList);
+
+        MyInfo();
+        btn_userWork_search.setOnAction(event -> handle_myWorkDate_Search(event));
+        btn_userEPay_search.setOnAction(event -> handle_myExtra_Search(event));
+
     }
 
     public void MyInfo(){

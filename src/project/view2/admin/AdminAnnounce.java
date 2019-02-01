@@ -28,6 +28,7 @@ public class AdminAnnounce implements Initializable {
     @FXML Button btn_insertNotice;
     @FXML Button btn_updateNotice;
     @FXML Button btn_deleteNotice;
+    @FXML Button btn_message;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -56,6 +57,10 @@ public class AdminAnnounce implements Initializable {
         tbv_adminNotice.setItems(resultArray);
     }
 
+    public void handle_btn_message(ActionEvent event) {
+
+    }
+
     // 이 밑으로는 해야 할 것들임
     public void handle_btn_insertNotice(ActionEvent event) {
 
@@ -66,5 +71,7 @@ public class AdminAnnounce implements Initializable {
     public void handle_btn_deleteNotice(ActionEvent event) {
 
     }
+
+
 
 }

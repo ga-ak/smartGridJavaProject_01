@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane fx:id="stack_userNotice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserController">
+<StackPane fx:id="stack_userNotice" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserNotice">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <bottom>
@@ -33,10 +33,10 @@
                      <children>
                         <TableView fx:id="tbv_noticeTable" focusTraversable="false" prefHeight="730.0" prefWidth="1000.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" resizable="false" text="번호" />
-                            <TableColumn prefWidth="200.0" resizable="false" text="보낸이" />
-                              <TableColumn prefWidth="200.0" resizable="false" text="보낸시간" />
-                              <TableColumn prefWidth="125.0" resizable="false" text="비고" />
+                            <TableColumn fx:id="tbc_noticeID" prefWidth="75.0" resizable="false" text="번호" />
+                            <TableColumn fx:id="tbc_sender" prefWidth="200.0" resizable="false" text="보낸이" />
+                              <TableColumn fx:id="tbc_time" prefWidth="200.0" resizable="false" text="보낸시간" />
+                              <TableColumn fx:id="tbc_type" prefWidth="125.0" resizable="false" text="비고" />
                           </columns>
                            <VBox.margin>
                               <Insets />

@@ -37,6 +37,7 @@ public class UserNotice implements Initializable {
         System.out.println("loggedId : " + LoginInfo.loggedID);
 
         ArrayList<ArrayList<String>> tempArray = dao.select("notice", columns, limit);
+        System.out.println("사용자 알림 초기화 : "+tempArray.size());
         ObservableList<NoticeTable> resultArray = FXCollections.observableArrayList();
         for (int i = 0; i < tempArray.size(); i++) {
             resultArray.add(new NoticeTable(tempArray.get(i)));

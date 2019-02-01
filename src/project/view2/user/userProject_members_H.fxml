@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -10,25 +11,34 @@
 
 <HBox fx:id="hbox_members" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.user.UserController">
     <children>
-        <Label fx:id="lbl_memberName" alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="사원 이름">
+        <Label fx:id="lbl_memberName" alignment="CENTER" focusTraversable="false" prefHeight="50.0" prefWidth="150.0" text="사원 이름">
             <HBox.margin>
                 <Insets bottom="10.0" top="10.0" />
             </HBox.margin>
+         <font>
+            <Font size="13.0" />
+         </font>
         </Label>
-        <Label fx:id="lbl_memberBigSub" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" text="대주제 이름">
+        <Label fx:id="lbl_memberBigSub" alignment="CENTER" focusTraversable="false" prefHeight="50.0" prefWidth="400.0" text="대주제 이름">
             <HBox.margin>
                 <Insets bottom="10.0" top="10.0" />
             </HBox.margin>
+         <font>
+            <Font size="13.0" />
+         </font>
         </Label>
-        <ProgressBar fx:id="pgb_memberPG" prefHeight="50.0" prefWidth="200.0" progress="0.0">
+        <ProgressBar fx:id="pgb_memberPG" focusTraversable="false" prefHeight="50.0" prefWidth="200.0" progress="0.0">
             <HBox.margin>
                 <Insets bottom="10.0" top="10.0" />
             </HBox.margin>
         </ProgressBar>
-      <Label alignment="CENTER" prefHeight="50.0" prefWidth="250.0" text="대주제 기간">
+      <Label alignment="CENTER" focusTraversable="false" prefHeight="50.0" prefWidth="250.0" text="대주제 기간">
          <HBox.margin>
             <Insets bottom="10.0" top="10.0" />
          </HBox.margin>
+         <font>
+            <Font size="13.0" />
+         </font>
       </Label>
     </children>
    <cursor>

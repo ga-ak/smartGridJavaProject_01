@@ -90,7 +90,8 @@ public class UserProject_inner implements Initializable {
         columns.add("work_name");
         columns.add("start_date");
         columns.add("end_date");
-        String limit = "project_id = " + projectID;
+        columns.add("work_id");
+        String limit = "project_id = " + projectID + "order by work_id";
         memberSelected = dao.select("project_works", columns, limit);
 
         hBoxArrayList = new ArrayList<>();
@@ -98,7 +99,7 @@ public class UserProject_inner implements Initializable {
         for (int i = 0; i < memberSelected.size(); i++) {
             String memberID = memberSelected.get(i).get(0);
             ArrayList<String> column1 = new ArrayList<>();
-            column1.add("employee_name");
+            column1.add("distinct employee_name");
             String memberName = dao.select("employees", column1, "employee_id = " + memberID).get(0).get(0);
             String workName = memberSelected.get(i).get(1);
             String startDate = memberSelected.get(i).get(2);

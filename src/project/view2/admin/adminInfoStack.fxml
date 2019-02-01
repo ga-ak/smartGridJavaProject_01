@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.view2.admin.AdminInfo">
    <children>
       <TabPane focusTraversable="false" minWidth="1000.0" prefHeight="200.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -41,19 +41,8 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <SplitMenuButton focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" text="이름검색">
-                                      <items>
-                                        <MenuItem mnemonicParsing="false" text="직급검색" />
-                                        <MenuItem mnemonicParsing="false" text="부서검색" />
-                                      </items>
-                                       <HBox.margin>
-                                          <Insets left="10.0" />
-                                       </HBox.margin>
-                                       <font>
-                                          <Font size="13.0" />
-                                       </font>
-                                    </SplitMenuButton>
-                                    <TextField focusTraversable="false" prefHeight="30.0" prefWidth="150.0">
+                                    <ComboBox fx:id="cbx_employeeOpt" prefWidth="130.0" promptText="검색조건" />
+                                    <TextField fx:id="txf_employeeSearch" focusTraversable="false" prefHeight="30.0" prefWidth="150.0">
                                        <HBox.margin>
                                           <Insets left="20.0" />
                                        </HBox.margin>
@@ -64,7 +53,7 @@
                                           <Font size="13.0" />
                                        </font>
                                     </TextField>
-                                    <Button focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="검색">
+                                    <Button fx:id="btn_employeeSearch" focusTraversable="false" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="검색">
                                        <HBox.margin>
                                           <Insets left="10.0" />
                                        </HBox.margin>
@@ -74,23 +63,19 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <ScrollPane hbarPolicy="NEVER" prefHeight="587.0" prefWidth="1000.0">
-                                 <content>
-                                    <TableView focusTraversable="false" prefHeight="587.0" prefWidth="1000.0">
-                                      <columns>
-                                        <TableColumn prefWidth="100.0" text="사원번호" />
-                                        <TableColumn prefWidth="100.0" text="부서번호" />
-                                          <TableColumn prefWidth="90.0" text="직급" />
-                                          <TableColumn prefWidth="100.0" text="이름" />
-                                          <TableColumn prefWidth="90.0" text="기본급" />
-                                          <TableColumn prefWidth="97.0" text="주소" />
-                                          <TableColumn prefWidth="115.0" text="연락처" />
-                                          <TableColumn prefWidth="120.0" text="입사일" />
-                                          <TableColumn prefWidth="120.0" text="주민등록번호" />
-                                      </columns>
-                                    </TableView>
-                                 </content>
-                              </ScrollPane>
+                              <TableView fx:id="tbv_employee" focusTraversable="false" prefHeight="587.0" prefWidth="1000.0">
+                                <columns>
+                                  <TableColumn fx:id="tbc_employeeId" prefWidth="100.0" text="사원번호" />
+                                  <TableColumn fx:id="tbc_deptId" prefWidth="100.0" text="부서번호" />
+                                    <TableColumn fx:id="tbc_jobgradeId" prefWidth="90.0" text="직급" />
+                                    <TableColumn fx:id="tbc_employeeName" prefWidth="100.0" text="이름" />
+                                    <TableColumn fx:id="tbc_baseSal" prefWidth="90.0" text="기본급" />
+                                    <TableColumn fx:id="tbc_address" prefWidth="97.0" text="주소" />
+                                    <TableColumn fx:id="tbc_contact" prefWidth="115.0" text="연락처" />
+                                    <TableColumn fx:id="tbc_hireDate" prefWidth="120.0" text="입사일" />
+                                    <TableColumn fx:id="tbc_ssn" prefWidth="187.0" text="주민등록번호" />
+                                </columns>
+                              </TableView>
                            </children>
                         </VBox>
                      </center>

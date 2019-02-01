@@ -7,7 +7,7 @@ public class CreatePassword {
     public String createPW() {
         String password = "";
         Random ran = new Random();
-        int passwordSize = ran.nextInt(5)+8;
+        int passwordSize = ran.nextInt(2)+5;
         int[] pN = {48, 57};
         int[] pB = {65, 90};
         int[] pS = {97, 122};

@@ -15,7 +15,7 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ComboBox fx:id="cbx_searchOpt" prefHeight="30.0" prefWidth="110.0" promptText="검색 조건" />
+                        <ComboBox fx:id="cbx_searchOpt" prefHeight="30.0" prefWidth="130.0" promptText="검색 조건" />
                         <TextField fx:id="tbx_searchVal" focusTraversable="false" prefHeight="30.0" prefWidth="150.0">
                            <HBox.margin>
                               <Insets left="20.0" right="10.0" />
@@ -24,19 +24,15 @@
                         <Button fx:id="btn_search" mnemonicParsing="false" prefHeight="30.0" prefWidth="75.0" text="검색" />
                      </children>
                   </HBox>
-                  <ScrollPane focusTraversable="false" hbarPolicy="NEVER" prefHeight="587.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                     <content>
-                        <TableView fx:id="tbv_projectTable" focusTraversable="false" prefHeight="587.0" prefWidth="990.0" scaleShape="false">
-                           <columns>
-                              <TableColumn fx:id="tbc_projetID" prefWidth="150.0" text="프로젝트번호" />
-                              <TableColumn fx:id="tbc_projectName" prefWidth="200.0" text="프로젝트이름" />
-                              <TableColumn fx:id="tbc_projectLeader" prefWidth="130.0" text="담당자" />
-                              <TableColumn fx:id="tbc_projectStart" prefWidth="225.0" text="시작일" />
-                              <TableColumn fx:id="tbc_projectEnd" prefWidth="225.0" text="종료일" />
-                           </columns>
-                        </TableView>
-                     </content>
-                  </ScrollPane>
+                  <TableView fx:id="tbv_projectTable" focusTraversable="false" prefHeight="630.0" prefWidth="990.0" scaleShape="false">
+                     <columns>
+                        <TableColumn fx:id="tbc_projetID" prefWidth="150.0" text="프로젝트번호" />
+                        <TableColumn fx:id="tbc_projectName" prefWidth="200.0" text="프로젝트이름" />
+                        <TableColumn fx:id="tbc_projectLeader" prefWidth="130.0" text="담당자" />
+                        <TableColumn fx:id="tbc_projectStart" prefWidth="225.0" text="시작일" />
+                        <TableColumn fx:id="tbc_projectEnd" prefWidth="225.0" text="종료일" />
+                     </columns>
+                  </TableView>
                </children>
             </VBox>
          </center>
