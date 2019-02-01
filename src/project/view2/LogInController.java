@@ -82,6 +82,12 @@ public class LogInController {
         } else {
             //System.out.println("로그인 실패..");
             isADM = false;
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("로그인 실패!");
+            alert.setHeaderText("로그인 실패!");
+            alert.setContentText("입력한 정보가 올바르지 않습니다!");
+
+            alert.showAndWait();
         }
 
     }
